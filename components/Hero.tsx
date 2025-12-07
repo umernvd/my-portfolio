@@ -14,7 +14,20 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
       <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-72 h-72 rounded-full bg-[#e9edc9]/40 dark:bg-[#e9edc9]/5 blur-3xl opacity-50"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="max-w-3xl">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+          {/* Profile Image */}
+          <div className="flex-shrink-0">
+            <div className="card-glow relative w-64 h-64 md:w-80 md:h-80 rounded-full bg-beige dark:bg-primary border-4 border-primary dark:border-beige p-2 shadow-xl">
+              <img 
+                src="/components/Picsart_25-12-07_18-14-16-776.png" 
+                alt="Muhammad Umer Naveed"
+                className="w-full h-full object-cover rounded-full"
+              />
+            </div>
+          </div>
+
+          {/* Content */}
+          <div className="flex-1 max-w-3xl">
           
           <h1 className="text-4xl md:text-6xl font-bold text-stone-900 dark:text-white tracking-tight mb-6">
             Hi, I'm <span className="text-primary dark:text-beige">{data.name}</span>
@@ -68,6 +81,7 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
               <MapPin className="w-4 h-4 text-primary" />
               {data.location}
             </div>
+          </div>
           </div>
         </div>
       </div>
