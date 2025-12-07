@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Moon, Sun } from 'lucide-react';
 
-const Navbar: React.FC = () => {
+interface NavbarProps {
+  isDark: boolean;
+  toggleDarkMode: () => void;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ isDark, toggleDarkMode }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -87,7 +92,24 @@ const Navbar: React.FC = () => {
             ))}
           </div>
 
+          <div className="hidden md:flex items-center">
+            <button
+              onClick={toggleDarkMode}
+              aria-label="Toggle dark mode"
+              className="p-2 rounded-lg text-stone-600 dark:text-stone-300 hover:text-primary dark:hover:text-beige hover:bg-stone-100 dark:hover:bg-[#252e1f] transition-colors"
+            >
+              {isDark ? <Sun size={20} /> : <Moon size={20} />}
+            </button>
+          </div>
+
           <div className="md:hidden flex items-center">
+            <button
+              onClick={toggleDarkMode}
+              aria-label="Toggle dark mode"
+              className="p-2 mr-2 rounded-lg text-stone-600 dark:text-stone-300 hover:text-primary dark:hover:text-beige hover:bg-stone-100 dark:hover:bg-[#252e1f] transition-colors"
+            >
+              {isDark ? <Sun size={20} /> : <Moon size={20} />}
+            </button>
             <button onClick={() => setIsOpen(!isOpen)} className="text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-beige focus:outline-none">
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>

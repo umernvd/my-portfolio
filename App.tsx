@@ -1,4 +1,3 @@
-import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Skills from './components/Skills';
@@ -9,11 +8,14 @@ import Certifications from './components/Certifications';
 import Footer from './components/Footer';
 import RevealOnScroll from './components/RevealOnScroll';
 import { portfolioData } from './data';
+import { useDarkMode } from './hooks/useDarkMode';
 
 function App() {
+  const [isDark, setIsDark] = useDarkMode();
+
   return (
     <div className="min-h-screen bg-stone-50 dark:bg-[#1a2015] font-sans transition-colors duration-300">
-      <Navbar />
+      <Navbar isDark={isDark} toggleDarkMode={() => setIsDark(!isDark)} />
       <main>
         <RevealOnScroll>
           <Hero data={portfolioData.personalInfo} />
