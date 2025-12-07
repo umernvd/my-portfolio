@@ -14,7 +14,7 @@ const Education: React.FC<EducationProps> = ({ data }) => {
 
         <div className="max-w-4xl mx-auto grid gap-8">
           {data.map((edu, idx) => (
-            <div key={idx} className="bg-white dark:bg-[#252e1f] rounded-2xl p-8 shadow-sm border border-stone-100 dark:border-stone-800 flex flex-col md:flex-row gap-6 items-start transition-colors duration-300">
+            <div key={idx} className="bg-beige dark:bg-[#252e1f] rounded-2xl p-8 shadow-sm border-2 border-primary dark:border-beige flex flex-col md:flex-row gap-6 items-start transition-colors duration-300">
               <div className="p-4 bg-primary/10 dark:bg-primary/20 rounded-xl text-primary flex-shrink-0">
                 <GraduationCap className="w-8 h-8" />
               </div>

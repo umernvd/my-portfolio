@@ -29,7 +29,7 @@ const Projects: React.FC<ProjectsProps> = ({ data }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {data.map((project, idx) => (
-            <div key={idx} className="bg-white dark:bg-[#252e1f] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-stone-100 dark:border-stone-800 flex flex-col h-full group">
+            <div key={idx} className="bg-beige dark:bg-[#252e1f] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border-2 border-primary dark:border-beige flex flex-col h-full group">
               <div className="p-8 flex-1">
                 <div className="flex justify-between items-start mb-4">
                   <div className="p-3 bg-primary/10 dark:bg-primary/20 rounded-xl text-primary mb-4 group-hover:scale-110 transition-transform duration-300">

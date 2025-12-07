@@ -61,7 +61,7 @@ const Skills: React.FC<SkillsProps> = ({ data }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {data.map((category, idx) => (
-            <div key={idx} className="bg-stone-50 dark:bg-[#252e1f] rounded-xl p-6 border border-stone-100 dark:border-stone-800 hover:shadow-lg transition-all duration-300">
+            <div key={idx} className="bg-beige dark:bg-[#252e1f] rounded-xl p-6 border-2 border-primary dark:border-beige hover:shadow-lg transition-all duration-300">
               <div className="flex items-center gap-3 mb-6">
                 <div className="p-3 bg-white dark:bg-[#2f3a27] rounded-lg shadow-sm text-primary">
                   {getCategoryIcon(category.title)}
@@ -72,7 +72,7 @@ const Skills: React.FC<SkillsProps> = ({ data }) => {
                 {category.skills.map((skill, sIdx) => (
                   <span 
                     key={sIdx} 
-                    className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-white dark:bg-[#2f3a27] text-stone-700 dark:text-stone-300 border border-stone-200 dark:border-stone-700 shadow-sm hover:border-primary/30 dark:hover:border-primary/50 transition-colors"
+                    className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-white dark:bg-[#2f3a27] text-stone-700 dark:text-stone-300 border border-primary dark:border-beige shadow-sm hover:shadow-md transition-all"
                   >
                     {getSkillIcon(skill)}
                     {skill}

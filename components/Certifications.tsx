@@ -17,7 +17,7 @@ const Certifications: React.FC<CertificationsProps> = ({ data }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {data.map((cert, idx) => (
-            <div key={idx} className="group p-6 bg-white dark:bg-[#252e1f] border border-stone-100 dark:border-stone-800 rounded-xl hover:border-primary/30 dark:hover:border-primary/50 hover:shadow-md transition-all duration-300">
+            <div key={idx} className="group p-6 bg-beige dark:bg-[#252e1f] border-2 border-primary dark:border-beige rounded-xl hover:shadow-lg transition-all duration-300">
               <div className="flex items-start gap-4">
                 <div className="mt-1 text-primary group-hover:scale-110 transition-transform">
                   <Award className="w-6 h-6" />
