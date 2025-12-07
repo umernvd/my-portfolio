@@ -27,11 +27,11 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
           
           {/* Mobile Profile Image - shown after subtitle */}
           <div className="lg:hidden flex justify-center mb-8">
-            <div className="card-glow relative w-72 h-72 rounded-full bg-beige dark:bg-primary border-4 border-primary dark:border-beige p-2 shadow-xl">
+            <div className="card-glow relative w-72 h-72 rounded-full bg-beige dark:bg-primary border-4 border-primary dark:border-beige overflow-hidden shadow-xl">
               <img 
                 src="/profile.png" 
                 alt="Muhammad Umer Naveed"
-                className="w-full h-full object-cover rounded-full"
+                className="w-full h-full object-cover"
               />
             </div>
           </div>
@@ -87,11 +87,11 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
           
           {/* Desktop Profile Image - shown on right side, larger */}
           <div className="hidden lg:block flex-shrink-0 order-2">
-            <div className="card-glow relative w-96 h-96 rounded-full bg-beige dark:bg-primary border-4 border-primary dark:border-beige p-2 shadow-xl">
+            <div className="card-glow relative w-96 h-96 rounded-full bg-beige dark:bg-primary border-4 border-primary dark:border-beige overflow-hidden shadow-xl">
               <img 
                 src="/profile.png" 
                 alt="Muhammad Umer Naveed"
-                className="w-full h-full object-cover rounded-full"
+                className="w-full h-full object-cover"
               />
             </div>
           </div>
