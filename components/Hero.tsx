@@ -18,10 +18,10 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
           {/* Content */}
           <div className="flex-1 max-w-3xl order-2 lg:order-1">
           
-          <h1 className="text-4xl md:text-6xl font-bold text-stone-900 dark:text-white tracking-tight mb-6">
-            Hi, I'm <span className="text-primary dark:text-beige">{data.name}</span>
+          <h1 className="text-4xl md:text-6xl font-bold text-stone-900 dark:text-white tracking-tight mb-6 animate-fade-in-up">
+            Hi, I'm <span className="gradient-text">{data.name}</span>
           </h1>
-          <h2 className="text-xl md:text-2xl text-stone-600 dark:text-beige font-medium mb-8">
+          <h2 className="text-xl md:text-2xl text-stone-600 dark:text-beige font-medium mb-8 animate-fade-in-up animate-delay-200">
             {data.title} specializing in building exceptional digital experiences.
           </h2>
           
