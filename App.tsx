@@ -7,6 +7,7 @@ import Education from './components/Education';
 import Certifications from './components/Certifications';
 import Footer from './components/Footer';
 import RevealOnScroll from './components/RevealOnScroll';
+import ErrorBoundary from './components/ErrorBoundary';
 import { portfolioData } from './data';
 import { useDarkMode } from './hooks/useDarkMode';
 
@@ -17,33 +18,47 @@ function App() {
     <div className="min-h-screen bg-stone-50 dark:bg-[#1a2015] font-sans transition-colors duration-300">
       <Navbar isDark={isDark} toggleDarkMode={() => setIsDark(!isDark)} />
       <main>
-        <RevealOnScroll>
-          <Hero data={portfolioData.personalInfo} />
-        </RevealOnScroll>
+        <ErrorBoundary>
+          <RevealOnScroll>
+            <Hero data={portfolioData.personalInfo} />
+          </RevealOnScroll>
+        </ErrorBoundary>
         
-        <RevealOnScroll>
-          <Skills data={portfolioData.skills} />
-        </RevealOnScroll>
+        <ErrorBoundary>
+          <RevealOnScroll>
+            <Skills data={portfolioData.skills} />
+          </RevealOnScroll>
+        </ErrorBoundary>
         
-        <RevealOnScroll>
-          <Projects data={portfolioData.projects} />
-        </RevealOnScroll>
+        <ErrorBoundary>
+          <RevealOnScroll>
+            <Projects data={portfolioData.projects} />
+          </RevealOnScroll>
+        </ErrorBoundary>
         
-        <RevealOnScroll>
-          <Experience data={portfolioData.experience} />
-        </RevealOnScroll>
+        <ErrorBoundary>
+          <RevealOnScroll>
+            <Experience data={portfolioData.experience} />
+          </RevealOnScroll>
+        </ErrorBoundary>
         
-        <RevealOnScroll>
-          <Education data={portfolioData.education} />
-        </RevealOnScroll>
+        <ErrorBoundary>
+          <RevealOnScroll>
+            <Education data={portfolioData.education} />
+          </RevealOnScroll>
+        </ErrorBoundary>
         
-        <RevealOnScroll>
-          <Certifications data={portfolioData.certifications} />
-        </RevealOnScroll>
+        <ErrorBoundary>
+          <RevealOnScroll>
+            <Certifications data={portfolioData.certifications} />
+          </RevealOnScroll>
+        </ErrorBoundary>
       </main>
-      <RevealOnScroll>
-        <Footer data={portfolioData.personalInfo} />
-      </RevealOnScroll>
+      <ErrorBoundary>
+        <RevealOnScroll>
+          <Footer data={portfolioData.personalInfo} />
+        </RevealOnScroll>
+      </ErrorBoundary>
     </div>
   );
 }
