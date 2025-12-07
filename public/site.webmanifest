@@ -1,0 +1,19 @@
+{
+  "name": "Muhammad Umer Naveed Portfolio",
+  "short_name": "MUN Portfolio",
+  "icons": [
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#556b2f",
+  "background_color": "#fafaf9",
+  "display": "standalone"
+}

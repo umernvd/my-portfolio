@@ -1,0 +1,16 @@
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevent FOUC (Flash of Unstyled Content) */
+body {
+  min-height: 100vh;
+}
