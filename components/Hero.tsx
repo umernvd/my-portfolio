@@ -19,7 +19,7 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
           <div className="flex-shrink-0">
             <div className="card-glow relative w-64 h-64 md:w-80 md:h-80 rounded-full bg-beige dark:bg-primary border-4 border-primary dark:border-beige p-2 shadow-xl">
               <img 
-                src="/components/Picsart_25-12-07_18-14-16-776.png" 
+                src="/profile.png" 
                 alt="Muhammad Umer Naveed"
                 className="w-full h-full object-cover rounded-full"
               />
