@@ -14,20 +14,9 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
       <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-72 h-72 rounded-full bg-[#e9edc9]/40 dark:bg-[#e9edc9]/5 blur-3xl opacity-50"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-          {/* Profile Image */}
-          <div className="flex-shrink-0">
-            <div className="card-glow relative w-64 h-64 md:w-80 md:h-80 rounded-full bg-beige dark:bg-primary border-4 border-primary dark:border-beige p-2 shadow-xl">
-              <img 
-                src="/profile.png" 
-                alt="Muhammad Umer Naveed"
-                className="w-full h-full object-cover rounded-full"
-              />
-            </div>
-          </div>
-
+        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12 lg:gap-16">
           {/* Content */}
-          <div className="flex-1 max-w-3xl">
+          <div className="flex-1 max-w-3xl order-2 lg:order-1">
           
           <h1 className="text-4xl md:text-6xl font-bold text-stone-900 dark:text-white tracking-tight mb-6">
             Hi, I'm <span className="text-primary dark:text-beige">{data.name}</span>
@@ -35,6 +24,18 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
           <h2 className="text-xl md:text-2xl text-stone-600 dark:text-beige font-medium mb-8">
             {data.title} specializing in building exceptional digital experiences.
           </h2>
+          
+          {/* Mobile Profile Image - shown after subtitle */}
+          <div className="lg:hidden flex justify-center mb-8">
+            <div className="card-glow relative w-72 h-72 rounded-full bg-beige dark:bg-primary border-4 border-primary dark:border-beige p-2 shadow-xl">
+              <img 
+                src="/profile.png" 
+                alt="Muhammad Umer Naveed"
+                className="w-full h-full object-cover rounded-full"
+              />
+            </div>
+          </div>
+          
           <p className="text-lg text-stone-600 dark:text-stone-300 leading-relaxed mb-10 max-w-2xl">
             I am a passionate Software Engineer with a strong foundation in Full Stack Development, Mobile App Development, and Machine Learning. 
             Dedicated to creating seamless, responsive, and efficient applications using modern technologies like React, Next.js, and Flutter.
@@ -82,6 +83,17 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
               {data.location}
             </div>
           </div>
+          </div>
+          
+          {/* Desktop Profile Image - shown on right side, larger */}
+          <div className="hidden lg:block flex-shrink-0 order-2">
+            <div className="card-glow relative w-96 h-96 rounded-full bg-beige dark:bg-primary border-4 border-primary dark:border-beige p-2 shadow-xl">
+              <img 
+                src="/profile.png" 
+                alt="Muhammad Umer Naveed"
+                className="w-full h-full object-cover rounded-full"
+              />
+            </div>
           </div>
         </div>
       </div>
