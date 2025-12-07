@@ -14,3 +14,50 @@ html {
 body {
   min-height: 100vh;
 }
+
+/* Glowing Hover Effects */
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(85, 107, 47, 0.3), 0 0 40px rgba(85, 107, 47, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(85, 107, 47, 0.5), 0 0 60px rgba(85, 107, 47, 0.3);
+  }
+}
+
+@keyframes glow-pulse-dark {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(243, 233, 210, 0.3), 0 0 40px rgba(243, 233, 210, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(243, 233, 210, 0.5), 0 0 60px rgba(243, 233, 210, 0.3);
+  }
+}
+
+/* Card glow effect for light theme */
+.card-glow:hover {
+  animation: glow-pulse 2s ease-in-out infinite;
+  transform: translateY(-4px);
+  transition: all 0.3s ease;
+}
+
+/* Card glow effect for dark theme */
+.dark .card-glow:hover {
+  animation: glow-pulse-dark 2s ease-in-out infinite;
+  transform: translateY(-4px);
+  transition: all 0.3s ease;
+}
+
+/* Button glow effect for light theme */
+.btn-glow:hover {
+  box-shadow: 0 0 20px rgba(85, 107, 47, 0.6), 0 0 40px rgba(85, 107, 47, 0.4);
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+/* Button glow effect for dark theme */
+.dark .btn-glow:hover {
+  box-shadow: 0 0 20px rgba(243, 233, 210, 0.6), 0 0 40px rgba(243, 233, 210, 0.4);
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}

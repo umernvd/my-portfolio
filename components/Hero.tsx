@@ -30,7 +30,7 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
           <div className="flex flex-wrap gap-4 mb-12">
             <a 
               href="#contact"
-              className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-[#4a5e29] transition-all shadow-lg shadow-primary/30"
+              className="btn-glow inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-[#4a5e29] transition-all shadow-lg shadow-primary/30"
             >
               <Mail className="w-5 h-5 mr-2" />
               Contact Me
@@ -39,7 +39,7 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
               href={data.linkedin}
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-6 py-3 border border-stone-200 dark:border-stone-700 text-base font-medium rounded-md text-stone-700 dark:text-stone-200 bg-white dark:bg-[#252e1f] hover:bg-stone-50 dark:hover:bg-[#2f3a27] transition-all hover:border-stone-300 dark:hover:border-stone-600"
+              className="btn-glow inline-flex items-center justify-center px-6 py-3 border border-stone-200 dark:border-stone-700 text-base font-medium rounded-md text-stone-700 dark:text-stone-200 bg-white dark:bg-[#252e1f] hover:bg-stone-50 dark:hover:bg-[#2f3a27] transition-all hover:border-stone-300 dark:hover:border-stone-600"
             >
               <Linkedin className="w-5 h-5 mr-2 text-[#0077b5]" />
               LinkedIn
@@ -48,7 +48,7 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
               href={data.github}
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-6 py-3 border border-stone-200 dark:border-stone-700 text-base font-medium rounded-md text-stone-700 dark:text-stone-200 bg-white dark:bg-[#252e1f] hover:bg-stone-50 dark:hover:bg-[#2f3a27] transition-all hover:border-stone-300 dark:hover:border-stone-600"
+              className="btn-glow inline-flex items-center justify-center px-6 py-3 border border-stone-200 dark:border-stone-700 text-base font-medium rounded-md text-stone-700 dark:text-stone-200 bg-white dark:bg-[#252e1f] hover:bg-stone-50 dark:hover:bg-[#2f3a27] transition-all hover:border-stone-300 dark:hover:border-stone-600"
             >
               <Github className="w-5 h-5 mr-2" />
               GitHub

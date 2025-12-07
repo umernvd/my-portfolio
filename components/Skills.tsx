@@ -61,7 +61,7 @@ const Skills: React.FC<SkillsProps> = ({ data }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {data.map((category, idx) => (
-            <div key={idx} className="bg-beige dark:bg-[#252e1f] rounded-xl p-6 border-2 border-primary dark:border-beige hover:shadow-lg transition-all duration-300">
+            <div key={idx} className="card-glow bg-beige dark:bg-[#252e1f] rounded-xl p-6 border-2 border-primary dark:border-beige hover:shadow-lg transition-all duration-300">
               <div className="flex items-center gap-3 mb-6">
                 <div className="p-3 bg-white dark:bg-[#2f3a27] rounded-lg shadow-sm text-primary">
                   {getCategoryIcon(category.title)}

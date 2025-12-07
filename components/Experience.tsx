@@ -14,7 +14,7 @@ const Experience: React.FC<ExperienceProps> = ({ data }) => {
 
         <div className="max-w-3xl mx-auto">
           {data.map((exp, idx) => (
-            <div key={idx} className="bg-beige dark:bg-[#252e1f] rounded-2xl p-8 mb-8 border-2 border-primary dark:border-beige shadow-sm hover:shadow-lg transition-all duration-300">
+            <div key={idx} className="card-glow bg-beige dark:bg-[#252e1f] rounded-2xl p-8 mb-8 border-2 border-primary dark:border-beige shadow-sm hover:shadow-lg transition-all duration-300">
               <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
                 <h3 className="text-xl font-bold text-stone-900 dark:text-beige">{exp.role}</h3>
                 <span className="text-sm font-semibold text-primary bg-primary/10 dark:bg-primary/20 px-3 py-1 rounded-full mt-2 sm:mt-0 w-fit">
