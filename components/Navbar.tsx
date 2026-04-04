@@ -4,26 +4,10 @@ import { Menu, X } from 'lucide-react';
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
-    let ticking = false;
-
     const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          const scrollY = window.scrollY;
-          setScrolled(scrollY > 20);
-          
-          const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-          if (scrollable > 0) {
-            setScrollProgress((scrollY / scrollable) * 100);
-          }
-          
-          ticking = false;
-        });
-        ticking = true;
-      }
+      setScrolled(window.scrollY > 20);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -116,13 +100,6 @@ const Navbar: React.FC = () => {
             </button>
           </div>
         </div>
-      </div>
-
-      <div className="absolute bottom-0 left-0 w-full h-1 bg-transparent">
-        <div
-          className="h-full bg-neo-accent transition-all duration-150 ease-out"
-          style={{ width: `${scrollProgress}%` }}
-        />
       </div>
 
       {isOpen && (
