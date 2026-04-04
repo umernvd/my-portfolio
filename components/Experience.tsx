@@ -1,6 +1,5 @@
 import React from 'react';
 import { PortfolioData } from '../types';
-import { Briefcase } from 'lucide-react';
 
 interface ExperienceProps {
   data: PortfolioData['experience'];
@@ -15,14 +14,10 @@ const Experience: React.FC<ExperienceProps> = ({ data }) => {
         </h2>
 
         <div className="max-w-3xl mx-auto relative">
-          <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-4 bg-neo-ink transform md:-translate-x-1/2"></div>
           
           {data.map((exp, idx) => (
-            <div key={idx} className="relative pl-12 md:pl-0 mb-12 last:mb-0">
-              <div className="absolute left-0 md:left-1/2 top-0 w-8 h-8 border-4 border-neo-ink bg-neo-accent shadow-neo-md transform md:-translate-x-1/2 flex items-center justify-center">
-                <Briefcase className="w-4 h-4 stroke-[3px] text-neo-white" />
-              </div>
-
+            <div key={idx} className="relative mb-12 last:mb-0">
+              
               <div className={`
                 neo-card bg-neo-white
                 md:w-[calc(50%-2rem)] md:ml-auto
