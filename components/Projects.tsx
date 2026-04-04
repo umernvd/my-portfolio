@@ -8,80 +8,120 @@ interface ProjectsProps {
 
 const Projects: React.FC<ProjectsProps> = ({ data }) => {
   return (
-    <section id="projects" className="py-20 bg-stone-50 dark:bg-[#1a2015] transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="py-20 lg:py-32 bg-neo-bg relative">
+      <div className="absolute inset-0 bg-halftone opacity-30"></div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16">
           <div>
-            <h2 className="text-3xl font-bold text-stone-900 dark:text-beige sm:text-4xl mb-4">Featured Projects</h2>
-            <p className="text-lg text-stone-600 dark:text-stone-300 max-w-xl">
-              Highlights of my recent work, ranging from mobile apps to full-stack web platforms and ML models.
+            <h2 className="neo-section-title text-neo-ink mb-4">
+              FEATURED PROJECTS
+            </h2>
+            <p className="text-lg md:text-xl font-bold max-w-xl text-neo-ink/80">
+              HIGHLIGHTS OF RECENT WORK: MOBILE APPS, FULL-STACK PLATFORMS, AND ML MODELS
             </p>
           </div>
-          <a 
-            href="https://github.com/umernvd" 
-            target="_blank" 
+          <a
+            href="https://github.com/umernvd"
+            target="_blank"
             rel="noopener noreferrer"
-            className="hidden md:inline-flex items-center font-medium text-primary hover:text-[#4a5e29] transition-colors"
+            className="
+              neo-btn neo-btn-outline mt-6 md:mt-0
+              inline-flex items-center gap-2
+              hover:bg-neo-muted
+              active:translate-x-[2px] active:translate-y-[2px] active:shadow-none
+            "
           >
-            View all on GitHub <ExternalLink className="w-4 h-4 ml-1" />
+            VIEW ALL <Github className="w-4 h-4 stroke-[3px]" />
           </a>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {data.map((project, idx) => (
-            <div key={idx} className="card-glow bg-beige dark:bg-[#252e1f] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border-2 border-primary dark:border-beige flex flex-col h-full group">
-              <div className="p-8 flex-1">
+            <div 
+              key={idx} 
+              className={`
+                neo-card bg-neo-white
+                flex flex-col h-full
+                ${idx % 2 === 0 ? 'rotate-1' : '-rotate-1'}
+                hover:rotate-0 hover:-translate-y-2 hover:shadow-neo-xl
+                transition-all duration-200
+              `}
+            >
+              <div className="p-6 lg:p-8 flex-1">
                 <div className="flex justify-between items-start mb-4">
-                  <div className="p-3 bg-primary/10 dark:bg-primary/20 rounded-xl text-primary mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <FolderGit2 className="w-6 h-6" />
+                  <div className="p-4 border-4 border-neo-ink shadow-neo-sm bg-neo-secondary">
+                    <FolderGit2 className="w-8 h-8 stroke-[3px]" />
                   </div>
-                  <a 
-                    href={project.link || "https://github.com/umernvd"} 
+                  <a
+                    href={project.link || "https://github.com/umernvd"}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-stone-400 hover:text-stone-900 dark:hover:text-beige transition-colors"
+                    className="
+                      p-3 border-4 border-neo-ink shadow-neo-sm bg-neo-white
+                      hover:bg-neo-accent hover:text-neo-white
+                      transition-all duration-100
+                      active:translate-x-[2px] active:translate-y-[2px] active:shadow-none
+                    "
                     aria-label={`View ${project.title} on GitHub`}
                   >
-                    <Github className="w-6 h-6" />
+                    <Github className="w-6 h-6 stroke-[3px]" />
                   </a>
                 </div>
-                
-                <h3 className="text-xl font-bold text-stone-900 dark:text-beige mb-2 group-hover:text-primary transition-colors">
-                  <a href={project.link || "https://github.com/umernvd"} target="_blank" rel="noopener noreferrer">
+
+                <h3 className="text-xl lg:text-2xl font-black uppercase tracking-tight mb-4 text-neo-ink">
+                  <a 
+                    href={project.link || "https://github.com/umernvd"} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hover:text-neo-accent transition-colors"
+                  >
                     {project.title}
                   </a>
                 </h3>
-                
+
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.tech.map((tech, tIdx) => (
-                    <span key={tIdx} className="text-xs font-semibold px-2.5 py-0.5 rounded bg-stone-100 dark:bg-[#2f3a27] text-stone-600 dark:text-stone-300 uppercase tracking-wide">
+                    <span 
+                      key={tIdx} 
+                      className="neo-badge font-mono text-xs"
+                    >
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                <ul className="space-y-2 mb-6">
+                <ul className="space-y-3">
                   {project.description.map((desc, dIdx) => (
-                    <li key={dIdx} className="text-stone-600 dark:text-stone-300 text-sm leading-relaxed flex items-start">
-                      <span className="mr-2 mt-1.5 w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0"></span>
+                    <li 
+                      key={dIdx} 
+                      className="font-medium leading-relaxed flex items-start text-neo-ink/80"
+                    >
+                      <span className="mr-3 mt-2 w-2 h-2 bg-neo-accent flex-shrink-0 border-2 border-neo-ink"></span>
                       {desc}
                     </li>
                   ))}
                 </ul>
               </div>
+
+              <div className="p-6 lg:p-8 border-t-4 border-neo-ink">
+                <a
+                  href={project.link || "https://github.com/umernvd"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+                    neo-btn neo-btn-outline w-full
+                    inline-flex items-center justify-center gap-2
+                    hover:bg-neo-muted
+                    active:translate-x-[2px] active:translate-y-[2px] active:shadow-none
+                  "
+                >
+                  <ExternalLink className="w-4 h-4 stroke-[3px]" />
+                  VIEW PROJECT
+                </a>
+              </div>
             </div>
           ))}
-        </div>
-        
-        <div className="mt-12 text-center md:hidden">
-           <a 
-            href="https://github.com/umernvd" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="inline-flex items-center font-medium text-primary hover:text-[#4a5e29] transition-colors"
-          >
-            View all on GitHub <ExternalLink className="w-4 h-4 ml-1" />
-          </a>
         </div>
       </div>
     </section>

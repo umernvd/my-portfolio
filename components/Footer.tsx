@@ -23,78 +23,108 @@ const Footer: React.FC<FooterProps> = ({ data }) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1500));
-    
     setIsSubmitting(false);
     setIsSubmitted(true);
     setFormData({ name: '', email: '', message: '' });
   };
 
   return (
-    <footer id="contact" className="bg-[#2c3324] dark:bg-[#0c0f0a] text-stone-300 py-16 border-t border-[#3d4533] dark:border-[#1a2015] transition-colors duration-300">
+    <footer id="contact" className="bg-neo-ink text-neo-white py-16 lg:py-24 border-t-4 border-neo-accent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
-          
-          {/* Left Column: Info */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           <div>
-            <h2 className="text-3xl font-bold text-white dark:text-beige mb-6">Let's Connect</h2>
-            <p className="text-stone-400 dark:text-stone-300 mb-8 text-lg leading-relaxed">
-              I'm currently interested in new opportunities. Whether you have a question about my work or just want to say hi, feel free to drop a message!
+            <h2 className="neo-section-title text-neo-white mb-6">
+              LET'S CONNECT
+            </h2>
+            <p className="text-lg lg:text-xl leading-relaxed mb-8 text-neo-white/80">
+              INTERESTED IN NEW OPPORTUNITIES. HAVE A QUESTION? DROP A MESSAGE!
             </p>
-            
+
             <div className="space-y-4 mb-8">
-               <div className="flex items-center gap-3 text-stone-400 dark:text-stone-300 group">
-                 <div className="p-2 bg-[#3a4430] dark:bg-[#1a2015] rounded-lg group-hover:bg-primary/20 transition-colors">
-                   <Mail className="w-5 h-5 text-primary" />
-                 </div>
-                 <a href={`mailto:${data.email}`} className="hover:text-primary transition-colors text-lg">{data.email}</a>
-               </div>
+              <a 
+                href={`mailto:${data.email}`} 
+                className="
+                  flex items-center gap-3 
+                  p-4 border-4 border-neo-white shadow-neo-dark-sm bg-neo-dark-card
+                  hover:bg-neo-accent hover:border-neo-accent
+                  transition-all duration-100 font-bold
+                "
+              >
+                <Mail className="w-6 h-6 stroke-[3px]" />
+                {data.email}
+              </a>
             </div>
 
             <div className="flex gap-4">
-              <a 
-                href={data.github} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="w-12 h-12 flex items-center justify-center rounded-full bg-[#3a4430] dark:bg-[#1a2015] hover:bg-primary text-stone-400 hover:text-white transition-all duration-300 transform hover:-translate-y-1"
+              <a
+                href={data.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                  w-14 h-14 flex items-center justify-center
+                  border-4 border-neo-white shadow-neo-dark-sm bg-neo-dark-card
+                  hover:bg-neo-accent hover:border-neo-accent hover:shadow-neo-dark-lg
+                  transition-all duration-100
+                  active:translate-x-[2px] active:translate-y-[2px] active:shadow-none
+                "
                 aria-label="GitHub"
               >
-                <Github className="w-6 h-6" />
+                <Github className="w-7 h-7 stroke-[3px]" />
               </a>
-              <a 
-                href={data.linkedin} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="w-12 h-12 flex items-center justify-center rounded-full bg-[#3a4430] dark:bg-[#1a2015] hover:bg-primary text-stone-400 hover:text-white transition-all duration-300 transform hover:-translate-y-1"
+              <a
+                href={data.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                  w-14 h-14 flex items-center justify-center
+                  border-4 border-neo-white shadow-neo-dark-sm bg-neo-dark-card
+                  hover:bg-neo-accent hover:border-neo-accent hover:shadow-neo-dark-lg
+                  transition-all duration-100
+                  active:translate-x-[2px] active:translate-y-[2px] active:shadow-none
+                "
                 aria-label="LinkedIn"
               >
-                <Linkedin className="w-6 h-6" />
+                <Linkedin className="w-7 h-7 stroke-[3px]" />
               </a>
             </div>
           </div>
 
-          {/* Right Column: Form */}
-          <div className="bg-[#3a4430]/50 dark:bg-[#1a2015]/50 p-6 md:p-8 rounded-2xl border border-[#4a563d]/50 dark:border-[#2f3a27] backdrop-blur-sm">
+          <div className="
+            border-4 border-neo-white shadow-neo-dark-md
+            bg-neo-dark-card p-6 md:p-8
+          ">
             {isSubmitted ? (
-              <div className="h-full flex flex-col items-center justify-center text-center py-12 animate-in fade-in duration-500">
-                <div className="w-16 h-16 bg-green-500/10 text-green-500 rounded-full flex items-center justify-center mb-4">
-                  <CheckCircle className="w-8 h-8" />
+              <div className="h-full flex flex-col items-center justify-center text-center py-8">
+                <div className="
+                  w-20 h-20 flex items-center justify-center
+                  border-4 border-neo-white shadow-neo-dark-sm
+                  bg-neo-secondary mb-6
+                ">
+                  <CheckCircle className="w-10 h-10 stroke-[3px] text-neo-ink" />
                 </div>
-                <h3 className="text-2xl font-bold text-white dark:text-beige mb-2">Message Sent!</h3>
-                <p className="text-stone-400 max-w-xs mx-auto">Thanks for reaching out. I'll get back to you as soon as possible.</p>
-                <button 
+                <h3 className="text-2xl lg:text-3xl font-black uppercase tracking-tight text-neo-white mb-2">
+                  MESSAGE SENT!
+                </h3>
+                <p className="font-medium max-w-xs mx-auto text-neo-white/80 mb-8">
+                  THANKS FOR REACHING OUT. I'LL GET BACK TO YOU SOON.
+                </p>
+                <button
                   onClick={() => setIsSubmitted(false)}
-                  className="mt-8 text-primary hover:text-primary/80 font-medium hover:underline underline-offset-4"
+                  className="
+                    neo-btn neo-btn-secondary
+                    hover:bg-neo-accent hover:text-neo-white
+                  "
                 >
-                  Send another message
+                  SEND ANOTHER
                 </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-stone-400 mb-1.5">Name</label>
+                  <label htmlFor="name" className="block font-bold text-sm uppercase tracking-wide mb-2 text-neo-white/80">
+                    NAME
+                  </label>
                   <input
                     type="text"
                     id="name"
@@ -102,12 +132,14 @@ const Footer: React.FC<FooterProps> = ({ data }) => {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl bg-[#2c3324] dark:bg-[#1a2015] border border-[#4a563d] dark:border-[#2f3a27] text-white placeholder-stone-600 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                    placeholder="John Doe"
+                    className="neo-input bg-neo-dark-card border-neo-white text-neo-white"
+                    placeholder="YOUR NAME"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-stone-400 mb-1.5">Email</label>
+                  <label htmlFor="email" className="block font-bold text-sm uppercase tracking-wide mb-2 text-neo-white/80">
+                    EMAIL
+                  </label>
                   <input
                     type="email"
                     id="email"
@@ -115,12 +147,14 @@ const Footer: React.FC<FooterProps> = ({ data }) => {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl bg-[#2c3324] dark:bg-[#1a2015] border border-[#4a563d] dark:border-[#2f3a27] text-white placeholder-stone-600 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                    placeholder="john@example.com"
+                    className="neo-input bg-neo-dark-card border-neo-white text-neo-white"
+                    placeholder="YOUR@EMAIL.COM"
                   />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-stone-400 mb-1.5">Message</label>
+                  <label htmlFor="message" className="block font-bold text-sm uppercase tracking-wide mb-2 text-neo-white/80">
+                    MESSAGE
+                  </label>
                   <textarea
                     id="message"
                     name="message"
@@ -128,24 +162,30 @@ const Footer: React.FC<FooterProps> = ({ data }) => {
                     rows={4}
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl bg-[#2c3324] dark:bg-[#1a2015] border border-[#4a563d] dark:border-[#2f3a27] text-white placeholder-stone-600 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"
-                    placeholder="How can I help you?"
+                    className="neo-input bg-neo-dark-card border-neo-white text-neo-white resize-none"
+                    placeholder="HOW CAN I HELP YOU?"
                   />
                 </div>
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="btn-glow w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-primary hover:bg-[#4a5e29] text-white font-semibold text-lg transition-all disabled:opacity-70 disabled:cursor-not-allowed hover:shadow-lg hover:shadow-primary/25 mt-2"
+                  className="
+                    neo-btn neo-btn-primary w-full
+                    bg-neo-accent text-neo-white border-neo-white shadow-neo-dark-sm
+                    hover:bg-neo-secondary hover:text-neo-ink
+                    disabled:opacity-70 disabled:cursor-not-allowed
+                    active:translate-x-[2px] active:translate-y-[2px] active:shadow-none
+                  "
                 >
                   {isSubmitting ? (
                     <>
-                      <Loader2 className="w-5 h-5 animate-spin" />
-                      Sending...
+                      <Loader2 className="w-5 h-5 stroke-[3px] animate-spin" />
+                      SENDING...
                     </>
                   ) : (
                     <>
-                      <Send className="w-5 h-5" />
-                      Send Message
+                      <Send className="w-5 h-5 stroke-[3px]" />
+                      SEND MESSAGE
                     </>
                   )}
                 </button>
@@ -153,10 +193,14 @@ const Footer: React.FC<FooterProps> = ({ data }) => {
             )}
           </div>
         </div>
-        
-        <div className="mt-16 pt-8 border-t border-[#3d4533] dark:border-[#1a2015] flex flex-col md:flex-row justify-between items-center text-sm text-stone-500 dark:text-stone-600">
-          <p>&copy; {new Date().getFullYear()} {data.name}. All rights reserved.</p>
-          <p className="mt-2 md:mt-0">Designed & Built by {data.name}</p>
+
+        <div className="
+          mt-16 pt-8 border-t-4 border-neo-white
+          flex flex-col md:flex-row justify-between items-center
+          text-sm font-bold uppercase tracking-wide
+        ">
+          <p>© {new Date().getFullYear()} {data.name.toUpperCase()}. ALL RIGHTS RESERVED.</p>
+          <p className="mt-2 md:mt-0">DESIGNED & BUILT BY {data.name.split(' ').pop()?.toUpperCase()}</p>
         </div>
       </div>
     </footer>

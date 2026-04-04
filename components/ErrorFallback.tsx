@@ -20,25 +20,25 @@ const ErrorFallback: React.FC<ErrorFallbackProps> = ({ error, resetError }) => {
   };
 
   return (
-    <div className="min-h-[400px] flex items-center justify-center p-4 bg-stone-50 dark:bg-[#1a2015]">
-      <div className="max-w-md w-full bg-white dark:bg-[#252e1f] rounded-2xl shadow-xl p-8 border border-stone-200 dark:border-stone-800">
+    <div className="min-h-[400px] flex items-center justify-center p-4 bg-neo-bg">
+      <div className="neo-card bg-neo-white max-w-md w-full p-8">
         <div className="flex justify-center mb-6">
-          <div className="w-16 h-16 bg-red-100 dark:bg-red-900/20 rounded-full flex items-center justify-center">
-            <AlertCircle className="w-8 h-8 text-red-600 dark:text-red-400" />
+          <div className="w-20 h-20 border-4 border-neo-ink shadow-neo-md flex items-center justify-center bg-neo-accent">
+            <AlertCircle className="w-10 h-10 stroke-[3px] text-neo-white" />
           </div>
         </div>
-        
-        <h2 className="text-2xl font-bold text-stone-900 dark:text-beige text-center mb-4">
-          Something Went Wrong
+
+        <h2 className="text-2xl lg:text-3xl font-black uppercase tracking-tight text-neo-ink text-center mb-4">
+          SOMETHING WENT WRONG
         </h2>
-        
-        <p className="text-stone-600 dark:text-stone-300 text-center mb-6">
-          We encountered an unexpected error. Don't worry, we've logged the issue.
+
+        <p className="text-center mb-6 font-medium text-neo-ink/80">
+          AN UNEXPECTED ERROR OCCURRED. WE'VE LOGGED THE ISSUE.
         </p>
 
         {isDevelopment && error && (
-          <div className="mb-6 p-4 bg-red-50 dark:bg-red-900/10 rounded-lg border border-red-200 dark:border-red-800">
-            <p className="text-xs font-mono text-red-800 dark:text-red-300 break-all">
+          <div className="mb-6 p-4 border-4 border-neo-ink shadow-neo-sm bg-neo-accent/20">
+            <p className="font-mono text-xs break-all text-neo-ink">
               {error.message}
             </p>
           </div>
@@ -47,18 +47,18 @@ const ErrorFallback: React.FC<ErrorFallbackProps> = ({ error, resetError }) => {
         <div className="flex flex-col sm:flex-row gap-3">
           <button
             onClick={handleReload}
-            className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 bg-primary hover:bg-[#4a5e29] text-white font-medium rounded-lg transition-colors"
+            className="neo-btn neo-btn-primary flex-1 inline-flex items-center justify-center gap-2"
           >
-            <RefreshCw className="w-4 h-4" />
-            Try Again
+            <RefreshCw className="w-5 h-5 stroke-[3px]" />
+            TRY AGAIN
           </button>
-          
+
           <button
             onClick={handleGoHome}
-            className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 bg-stone-200 dark:bg-[#2f3a27] hover:bg-stone-300 dark:hover:bg-[#3a4430] text-stone-900 dark:text-stone-200 font-medium rounded-lg transition-colors"
+            className="neo-btn neo-btn-outline flex-1 inline-flex items-center justify-center gap-2"
           >
-            <Home className="w-4 h-4" />
-            Go Home
+            <Home className="w-5 h-5 stroke-[3px]" />
+            GO HOME
           </button>
         </div>
       </div>

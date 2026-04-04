@@ -12,7 +12,10 @@ const RevealOnScroll: React.FC<RevealOnScrollProps> = ({ children, className = "
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsVisible(entry.isIntersecting);
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
       },
       {
         threshold: 0.1,
@@ -32,9 +35,14 @@ const RevealOnScroll: React.FC<RevealOnScrollProps> = ({ children, className = "
   return (
     <div
       ref={ref}
-      className={`transition-all duration-1000 ease-out transform ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-      } ${className}`}
+      className={`
+        transition-all duration-300 ease-out
+        ${isVisible 
+          ? "opacity-100 translate-x-0 translate-y-0 scale-100" 
+          : "opacity-0 translate-x-8 translate-y-8 scale-95"
+        }
+        ${className}
+      `}
     >
       {children}
     </div>

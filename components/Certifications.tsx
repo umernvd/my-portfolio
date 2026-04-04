@@ -7,29 +7,49 @@ interface CertificationsProps {
 }
 
 const Certifications: React.FC<CertificationsProps> = ({ data }) => {
-  return (
-    <section className="py-20 bg-white dark:bg-[#1a2015] transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-stone-900 dark:text-beige sm:text-4xl mb-4 text-center">Certifications & Professional Development</h2>
-        <p className="text-center text-stone-600 dark:text-stone-300 mb-16 max-w-2xl mx-auto">
-          Continuous learning and professional growth through recognized platforms.
-        </p>
+  const rotations = ['rotate-2', '-rotate-1', 'rotate-1', '-rotate-2', 'rotate-3', '-rotate-3'];
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  return (
+    <section className="py-20 lg:py-32 bg-neo-white relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-4">
+          <h2 className="neo-section-title text-neo-ink mb-4">
+            CERTIFICATIONS
+          </h2>
+          <p className="text-lg md:text-xl font-bold max-w-2xl mx-auto text-neo-ink/80">
+            CONTINUOUS LEARNING THROUGH RECOGNIZED PLATFORMS
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
           {data.map((cert, idx) => (
-            <div key={idx} className="card-glow group p-6 bg-beige dark:bg-[#252e1f] border-2 border-primary dark:border-beige rounded-xl hover:shadow-lg transition-all duration-300">
-              <div className="flex items-start gap-4">
-                <div className="mt-1 text-primary group-hover:scale-110 transition-transform">
-                  <Award className="w-6 h-6" />
+            <div 
+              key={idx} 
+              className={`
+                neo-card bg-neo-bg
+                ${rotations[idx % rotations.length]}
+                hover:rotate-0 hover:-translate-y-2 hover:shadow-neo-lg
+                transition-all duration-200
+              `}
+            >
+              <div className="p-6 flex items-start gap-4">
+                <div className={`
+                  p-3 border-4 border-neo-ink shadow-neo-sm
+                  ${idx % 3 === 0 ? 'bg-neo-accent' : idx % 3 === 1 ? 'bg-neo-secondary' : 'bg-neo-muted'}
+                  flex-shrink-0
+                `}>
+                  <Award className="w-6 h-6 stroke-[3px] text-neo-ink" />
                 </div>
-                <div>
-                  <h3 className="font-semibold text-stone-900 dark:text-beige mb-1 group-hover:text-primary transition-colors">
+                <div className="flex-1 min-w-0">
+                  <h3 className="font-black text-base lg:text-lg uppercase tracking-tight text-neo-ink mb-2 leading-tight">
                     {cert.name}
                   </h3>
-                  <p className="text-sm text-stone-500 dark:text-stone-400 flex items-center gap-1">
-                    <CheckCircle2 className="w-3 h-3" />
-                    {cert.provider}
-                  </p>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 stroke-[3px] text-neo-accent flex-shrink-0" />
+                    <span className="font-bold text-sm text-neo-ink/70">
+                      {cert.provider}
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
