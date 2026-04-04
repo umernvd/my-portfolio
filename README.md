@@ -2,28 +2,36 @@
 
 Personal portfolio website showcasing my skills, projects, and experience as a Software Engineer.
 
-## 🚀 Live Demo
+## Live Demo
 **[View Portfolio](https://umer-naveed.vercel.app/)**
 
-## 🛠️ Built With
+## Built With
 - **React 19.2.1** - UI library
 - **TypeScript** - Type safety
 - **Vite 6.2.0** - Build tool & dev server
-- **Tailwind CSS** - Styling (via CDN)
+- **Tailwind CSS v4** - Styling
 - **Lucide React** - Icon library
+- **Space Grotesk** - Typography
 
-## 📋 Features
-- ✨ Responsive design for all devices
-- 🌓 Dark mode support (system preference + manual toggle)
-- 🎨 Smooth scroll animations with Intersection Observer
-- 🔍 SEO optimized with comprehensive meta tags
-- 📧 Contact form with submission handling
-- 💼 Project showcase with external GitHub links
-- 🛠️ Skills categorization with technology icons
-- ⚡ Fast loading with optimized production builds
-- 🎯 Error boundaries for graceful error handling
+## Design
+Neo-Brutalist aesthetic featuring:
+- Bold hard-edged borders and shadows
+- High-saturation color palette (red, yellow, violet)
+- Cream background with textured sections
+- Mechanical, snappy interactions
+- Sticker-like layered elements
 
-## 🏃‍♂️ Running Locally
+## Features
+- Responsive design for all devices
+- Scroll-triggered reveal animations
+- SEO optimized with comprehensive meta tags
+- Contact form with submission handling
+- Project showcase with external GitHub links
+- Skills categorization with technology icons
+- Fast loading with optimized production builds
+- Error boundaries for graceful error handling
+
+## Running Locally
 
 ### Prerequisites
 - Node.js (v18 or higher recommended)
@@ -49,7 +57,7 @@ npm run dev
 
 4. Open browser to `http://localhost:3000`
 
-## 🏗️ Build for Production
+## Build for Production
 
 ```bash
 npm run build
@@ -62,30 +70,33 @@ Preview production build:
 npm run preview
 ```
 
-## 📁 Project Structure
+## Project Structure
 ```
 /
 ├── components/          # React components
-│   ├── Navbar.tsx      # Navigation with dark mode toggle
+│   ├── Navbar.tsx      # Navigation
 │   ├── Hero.tsx        # Hero section with intro
 │   ├── Skills.tsx      # Technical skills showcase
 │   ├── Projects.tsx    # Featured projects
 │   ├── Experience.tsx  # Work experience timeline
-│   ├── Education.tsx   # Educational background
+│   ├── Education.tsx    # Educational background
 │   ├── Certifications.tsx  # Professional certifications
 │   ├── Footer.tsx      # Contact form and footer
-│   └── RevealOnScroll.tsx  # Scroll animation wrapper
-├── hooks/              # Custom React hooks
+│   ├── RevealOnScroll.tsx  # Scroll animation wrapper
+│   ├── ErrorBoundary.tsx   # Error handling
+│   └── ErrorFallback.tsx    # Error UI
 ├── public/             # Static assets (favicons, icons)
 ├── data.ts             # Portfolio content data
 ├── types.ts            # TypeScript interfaces
 ├── App.tsx             # Main app component
 ├── index.tsx           # App entry point
 ├── index.html          # HTML template
-└── index.css           # Global styles
+├── index.css           # Global styles & Tailwind config
+├── tailwind.config.js  # Vite config (includes Tailwind)
+└── package.json
 ```
 
-## 🎨 Customization
+## Customization
 
 ### Update Portfolio Content
 Edit `data.ts` to modify:
@@ -97,14 +108,14 @@ Edit `data.ts` to modify:
 - Certifications
 
 ### Modify Styling
-Theme colors are defined in `index.html` Tailwind config:
-- **Primary Color**: `#556b2f` (Olive Green)
-- **Beige Accent**: `#f3e9d2`
-- **Dark Background**: `#1a2015`
+Theme colors are defined in `index.css`:
+- **Background**: `#FFFDF5` (Cream)
+- **Accent**: `#FF6B6B` (Hot Red)
+- **Secondary**: `#FFD93D` (Vivid Yellow)
+- **Muted**: `#C4B5FD` (Soft Violet)
+- **Ink**: `#000000` (Pure Black)
 
-To customize, update the Tailwind configuration in the `<script>` section of `index.html`.
-
-## 🚀 Deployment
+## Deployment
 
 This project is optimized for deployment on:
 - **Vercel** (Recommended - Zero config)
@@ -115,7 +126,7 @@ This project is optimized for deployment on:
 1. Push your code to GitHub
 2. Import repository in [Vercel](https://vercel.com)
 3. Vercel auto-detects Vite configuration
-4. Deploy! ✨
+4. Deploy!
 
 ### Deploy to Netlify
 1. Create `netlify.toml` in root:
@@ -127,17 +138,16 @@ This project is optimized for deployment on:
 2. Connect repository to Netlify
 3. Deploy!
 
-## 📝 License
+## License
 This project is open source and available under the [MIT License](LICENSE).
 
-## 📧 Contact
+## Contact
 **Muhammad Umer Naveed**
-- 📧 Email: [muhammadumernaveed1234@gmail.com](mailto:muhammadumernaveed1234@gmail.com)
-- 💼 LinkedIn: [linkedin.com/in/umer-naveed](https://linkedin.com/in/umer-naveed)
-- 🐙 GitHub: [github.com/umernvd](https://github.com/umernvd)
-- 📍 Location: Lahore, Pakistan
+- Email: [muhammadumernaveed1234@gmail.com](mailto:muhammadumernaveed1234@gmail.com)
+- LinkedIn: [linkedin.com/in/umer-naveed](https://linkedin.com/in/umer-naveed)
+- GitHub: [github.com/umernvd](https://github.com/umernvd)
+- Location: Lahore, Pakistan
 
 ---
 
-⭐ If you like this project, please consider giving it a star on GitHub!
-
+If you like this project, please consider giving it a star on GitHub!
