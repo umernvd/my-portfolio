@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-// import { Menu, X } from 'lucide-react';
 import { List, X } from '@phosphor-icons/react';
 import TypewriterWords from './TypewriterWords';
 

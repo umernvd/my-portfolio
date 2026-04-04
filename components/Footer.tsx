@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { PortfolioData } from '../types';
-// import { Github, Linkedin, Mail, Send, CheckCircle, Loader2 } from 'lucide-react';
 import { GithubLogo, LinkedinLogo, EnvelopeSimple, PaperPlaneTilt, CheckCircle, Spinner } from '@phosphor-icons/react';
 
 interface FooterProps {

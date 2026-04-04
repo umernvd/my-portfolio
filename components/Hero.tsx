@@ -1,5 +1,4 @@
 import React from 'react';
-// import { Github, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 import { GithubLogo, LinkedinLogo, EnvelopeSimple, Phone, MapPin } from '@phosphor-icons/react';
 import { PortfolioData } from '../types';
 

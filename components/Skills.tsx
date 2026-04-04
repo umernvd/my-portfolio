@@ -1,6 +1,5 @@
 import React from 'react';
 import { PortfolioData } from '../types';
-// import { Code2, Server, Wrench, Languages, Globe, Smartphone, Database } from 'lucide-react';
 import { 
   Code, HardDrives, Wrench, Translate, Globe, DeviceMobile, Database,
   SquaresFourIcon, DevicesIcon, PlugsConnectedIcon, CubeIcon, HardDrivesIcon, 

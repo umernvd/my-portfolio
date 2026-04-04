@@ -1,6 +1,5 @@
 import React from 'react';
 import { PortfolioData } from '../types';
-// import { Github, ExternalLink, FolderGit2 } from 'lucide-react';
 import { GithubLogo, ArrowSquareOut, FolderOpen } from '@phosphor-icons/react';
 
 interface ProjectsProps {

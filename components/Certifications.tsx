@@ -1,6 +1,5 @@
 import React from 'react';
 import { PortfolioData } from '../types';
-// import { Award, CheckCircle2 } from 'lucide-react';
 import { Medal, CheckCircle } from '@phosphor-icons/react';
 
 interface CertificationsProps {

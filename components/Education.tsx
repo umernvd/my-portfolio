@@ -1,6 +1,5 @@
 import React from 'react';
 import { PortfolioData } from '../types';
-// import { GraduationCap } from 'lucide-react';
 import { GraduationCap } from '@phosphor-icons/react';
 
 interface EducationProps {
