@@ -9,9 +9,6 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({ data }) => {
   return (
     <section id="about" className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden min-h-screen">
-      <div className="absolute top-20 right-0 -mr-0 lg:-mr-20 w-96 h-96 bg-neo-muted/30 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-20 left-0 -ml-0 lg:-ml-20 w-72 h-72 bg-neo-secondary/40 rounded-full blur-3xl"></div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12 lg:gap-16">
           <div className="flex-1 max-w-3xl order-2 lg:order-1">
