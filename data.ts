@@ -13,71 +13,79 @@ export const portfolioData: PortfolioData = {
   skills: [
     {
       title: "Frontend",
-      skills: ["Next.js", "React", "HTML/CSS", "JavaScript", "Tailwind CSS", "Bootstrap", "Flutter"]
+      skills: ["React.js", "Next.js (App Router)", "Tailwind CSS", "Bootstrap", "Zustand", "Responsive Web Design"]
+    },
+    {
+      title: "Mobile",
+      skills: ["Flutter", "Dart", "Provider", "Hive", "Firebase", "Offline-First Architecture", "Google Drive API"]
     },
     {
       title: "Backend",
-      skills: ["Node.js", "Strapi (Headless CMS)", "RESTful APIs"]
+      skills: ["Node.js", "RESTful APIs", "JWT Authentication", "OAuth2", "Appwrite"]
+    },
+    {
+      title: "Databases",
+      skills: ["MySQL", "SQL", "Firebase Firestore"]
     },
     {
       title: "Tools",
-      skills: ["Git", "GitHub", "VS Code", "Kaggle"]
+      skills: ["Git", "GitHub", "Postman", "VS Code", "Vercel"]
     },
     {
       title: "Languages",
-      skills: ["JavaScript", "Python", "C++", "Dart"]
+      skills: ["JavaScript (ES6+)", "TypeScript", "Dart", "HTML5", "CSS3"]
     }
   ],
   projects: [
     {
-      title: "Diet Planner",
-      link: "https://github.com/umernvd/Diet-Planner-App",
-      tech: ["Flutter", "Dart", "Mobile Development"],
+      title: "Interview Pro – AI Powered Interview Management Platform",
+      link: "https://github.com/umernvd/interview-pro",
+      tech: ["Flutter", "Dart", "Next.js", "TypeScript", "Appwrite", "Google Drive API", "Hive"],
       description: [
-        "Developed a cross-platform mobile app for BMI calculation and calorie tracking.",
-        "Designed a responsive, seamless UI for Android and iOS using Flutter.",
-        "Integrated meal planning logic to assist users with nutritional goals."
+        "Full-stack SaaS platform: Flutter mobile app for conducting and recording interviews plus Next.js web dashboard for managing interviewers, question banks, and candidate pipelines.",
+        "Streamed large audio files to Google Drive via chunked HTTP requests, bypassing serverless payload limits.",
+        "Gemini AI transcription cut candidate evaluation time by 40% across 50+ sessions."
       ]
     },
     {
-      title: "ProFein - E-Commerce Store",
+      title: "ProFein – Full-Stack E-Commerce Platform",
       link: "https://github.com/umernvd/ProFein-Store",
-      tech: ["Next.js", "Node.js", "Strapi"],
+      tech: ["Next.js", "TypeScript", "Node.js", "REST APIs", "Strapi", "Tailwind CSS"],
       description: [
-        "Developed a full-stack e-commerce platform using Next.js, Node.js, and Strapi.",
-        "Integrated Strapi as a headless CMS.",
-        "Designed a dynamic, responsive, SEO-friendly frontend."
+        "Built a responsive, SEO-optimized e-commerce frontend using Next.js, improving page load speed by 40%.",
+        "Integrated Strapi as headless CMS to manage products, orders, and user data dynamically.",
+        "Implemented RESTful APIs for user authentication, product filtering, and checkout processes."
       ]
     },
     {
-      title: "Outfit Recommender",
-      link: "https://github.com/umernvd/Outfit-Recommender",
-      tech: ["Python", "Machine Learning", "Scikit-learn", "Pandas"],
+      title: "Diet Planner – Cross-Platform Fitness App",
+      link: "https://github.com/umernvd/Diet-Planner-App",
+      tech: ["Flutter", "Dart", "Firebase", "REST API"],
       description: [
-        "Engineered a personalized outfit recommendation system using ML and weather data.",
-        "Implemented content-based filtering to analyze clothing attributes for improved accuracy.",
-        "Preprocessed and cleaned fashion datasets using Pandas for optimal model performance."
+        "Flutter app for BMI tracking, calorie logging, and personalized meal planning adopted by 500+ test users on Android and iOS.",
+        "UI designed for full responsiveness with 30% faster onboarding.",
+        "Personalized meal planning logic improved user goal completion rates by 25%."
       ]
     },
     {
-      title: "Video Game Store – C++ Console App",
-      link: "https://github.com/umernvd/Video-Game-Store",
-      tech: ["C++", "File Handling", "OOP"],
+      title: "Xpresso – Cross-Platform Coffee Ordering App",
+      link: "https://github.com/umernvd/Xpresso-App",
+      tech: ["Flutter", "Dart", "Provider", "SharedPreferences", "UI/UX Design"],
       description: [
-        "Developed a console-based store using C++ with OOP principles.",
-        "Implemented file handling to manage inventory and simulate purchases."
+        "Constructed a dynamic shopping interface with advanced category filtering and catalog of 40+ items, reducing checkout navigation by 30%.",
+        "Engineered local data persistence for seamless 100% offline cart recovery across user sessions."
       ]
     }
   ],
   experience: [
     {
-      company: "Aksperts Tech",
-      role: "TeleSales Representative",
-      period: "2022 - 2023",
+      company: "Speedforce Digital",
+      role: "Software Engineer Intern (Full Stack & Mobile)",
+      period: "January 2026 – April 2026",
       description: [
-        "Communicated with clients to explain services and resolve queries.",
-        "Improved customer engagement and satisfaction through effective dialogue.",
-        "Developed strong interpersonal and problem-solving skills."
+        "Architected and developed Interview Pro, a comprehensive SaaS management platform with Next.js 16 admin dashboard and Flutter mobile application.",
+        "Designed secure REST API routes and Flutter offline-first synchronization queue (Hive) for resilient audio uploads to Google Drive via OAuth2.",
+        "Implemented RBAC using Appwrite for multi-tenant data isolation, integrated Gemini AI for audio transcription, reducing evaluation time by 40%."
       ]
     }
   ],
@@ -86,21 +94,16 @@ export const portfolioData: PortfolioData = {
       degree: "BS in Software Engineering",
       institution: "Superior University, Lahore",
       grade: "CGPA: 3.1/4.0",
-      coursework: "Data Structures & Algorithms, Database Systems, Object Oriented Programming, Web Development, Machine Learning, Mobile Application Development"
+      coursework: "Data Structures & Algorithms, Database Systems, Object Oriented Programming, Web Development, Machine Learning, Mobile Application Development, Software Quality Engineering"
     }
   ],
   certifications: [
-    { name: "Python for Data Science, AI & Development", provider: "Coursera" },
-    { name: "Machine Learning", provider: "Coursera" },
     { name: "Flutter and Dart", provider: "Coursera" },
-    { name: "Git and GitHub", provider: "Coursera" },
-    { name: "Software Quality Assurance", provider: "Coursera" },
     { name: "Programming with JavaScript", provider: "Coursera" },
+    { name: "Machine Learning", provider: "Coursera" },
+    { name: "Software Quality Assurance", provider: "Coursera" },
     { name: "Artificial Intelligence", provider: "Coursera" },
-    { name: "Introduction to SQL", provider: "SoloLearn" },
-    { name: "Introduction to Web Development", provider: "SoloLearn" },
-    { name: "Introduction to JavaScript", provider: "SoloLearn" },
-    { name: "ML for Beginners", provider: "SoloLearn" },
-    { name: "Fundamentals of Management", provider: "Coursera" }
+    { name: "Git and GitHub", provider: "Coursera" },
+    { name: "Python for Data Science, AI & Development", provider: "Coursera" }
   ]
 };
