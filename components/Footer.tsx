@@ -133,7 +133,6 @@ const Footer: React.FC<FooterProps> = ({ data }) => {
                     value={formData.name}
                     onChange={handleChange}
                     className="neo-input bg-neo-dark-card border-neo-white text-neo-white"
-                    placeholder="YOUR NAME"
                   />
                 </div>
                 <div>
@@ -148,7 +147,6 @@ const Footer: React.FC<FooterProps> = ({ data }) => {
                     value={formData.email}
                     onChange={handleChange}
                     className="neo-input bg-neo-dark-card border-neo-white text-neo-white"
-                    placeholder="YOUR@EMAIL.COM"
                   />
                 </div>
                 <div>
@@ -163,7 +161,6 @@ const Footer: React.FC<FooterProps> = ({ data }) => {
                     value={formData.message}
                     onChange={handleChange}
                     className="neo-input bg-neo-dark-card border-neo-white text-neo-white resize-none"
-                    placeholder="HOW CAN I HELP YOU?"
                   />
                 </div>
                 <button

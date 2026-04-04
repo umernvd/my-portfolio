@@ -7,7 +7,7 @@ interface CertificationsProps {
 }
 
 const Certifications: React.FC<CertificationsProps> = ({ data }) => {
-  const rotations = ['rotate-2', '-rotate-1', 'rotate-1', '-rotate-2', 'rotate-3', '-rotate-3'];
+  const rotations = ['md:rotate-2', 'md:-rotate-1', 'md:rotate-1', 'md:-rotate-2', 'md:rotate-3', 'md:-rotate-3'];
 
   return (
     <section className="py-20 lg:py-32 bg-neo-white relative">
@@ -21,7 +21,7 @@ const Certifications: React.FC<CertificationsProps> = ({ data }) => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
           {data.map((cert, idx) => (
             <div 
               key={idx} 

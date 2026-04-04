@@ -16,7 +16,7 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
         <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12 lg:gap-16">
           <div className="flex-1 max-w-3xl order-2 lg:order-1">
             <h1 className="
-              text-5xl md:text-6xl lg:text-7xl xl:text-8xl 
+              text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 
               font-black uppercase tracking-tighter 
               mb-6
             ">
@@ -112,8 +112,8 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
             </div>
 
             <div className="
-              flex flex-col sm:flex-row flex-wrap gap-6 
-              text-sm font-bold
+              flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6 
+              text-xs sm:text-sm font-bold
               border-t-4 border-neo-ink pt-8
             ">
               <a 

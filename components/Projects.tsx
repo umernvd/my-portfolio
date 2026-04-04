@@ -43,7 +43,7 @@ const Projects: React.FC<ProjectsProps> = ({ data }) => {
               className={`
                 neo-card bg-neo-white
                 flex flex-col h-full
-                ${idx % 2 === 0 ? 'rotate-1' : '-rotate-1'}
+                ${idx % 2 === 0 ? 'md:rotate-1' : 'md:-rotate-1'}
                 hover:rotate-0 hover:-translate-y-2 hover:shadow-neo-xl
                 transition-all duration-200
               `}

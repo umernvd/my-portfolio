@@ -27,7 +27,7 @@ const Experience: React.FC<ExperienceProps> = ({ data }) => {
                 neo-card bg-neo-white
                 md:w-[calc(50%-2rem)] md:ml-auto
                 ${idx % 2 === 0 ? 'md:mr-auto md:ml-0' : 'md:ml-auto'}
-                rotate-1 hover:rotate-0 hover:-translate-y-1 hover:shadow-neo-lg
+                md:rotate-1 hover:rotate-0 hover:-translate-y-1 hover:shadow-neo-lg
                 transition-all duration-200
               `}>
                 <div className="p-6 lg:p-8 border-b-4 border-neo-ink bg-neo-secondary">

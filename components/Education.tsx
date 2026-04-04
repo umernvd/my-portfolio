@@ -22,7 +22,7 @@ const Education: React.FC<EducationProps> = ({ data }) => {
               key={idx} 
               className={`
                 neo-card bg-neo-white
-                ${idx % 2 === 0 ? '-rotate-1' : 'rotate-1'}
+                ${idx % 2 === 0 ? 'md:-rotate-1' : 'md:rotate-1'}
                 hover:rotate-0 hover:-translate-y-1 hover:shadow-neo-lg
                 transition-all duration-200
               `}
