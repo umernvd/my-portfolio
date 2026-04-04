@@ -2,7 +2,7 @@ import { PortfolioData } from './types';
 
 export const portfolioData: PortfolioData = {
   personalInfo: {
-    name: "Muhammad Umer Naveed",
+    name: "Umer Naveed",
     title: "Software Engineer",
     phone: "+92-3044780586",
     email: "muhammadumernaveed1234@gmail.com",
@@ -13,7 +13,7 @@ export const portfolioData: PortfolioData = {
   skills: [
     {
       title: "Frontend",
-      skills: ["React.js", "Next.js (App Router)", "Tailwind CSS", "Bootstrap", "Zustand", "Responsive Web Design"]
+      skills: ["React.js", "Next.js", "Tailwind CSS", "Bootstrap", "Zustand", "Responsive Web Design"]
     },
     {
       title: "Mobile",
