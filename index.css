@@ -1,5 +1,23 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Space Grotesk';
+  src: local('Arial');
+  font-display: swap;
+  size-adjust: 107%;
+  ascent-override: 90%;
+  descent-override: 25%;
+}
+
+@font-face {
+  font-family: 'Fira Code';
+  src: local('Courier New');
+  font-display: swap;
+  size-adjust: 103%;
+  ascent-override: 90%;
+  descent-override: 20%;
+}
+
 @theme {
   --color-neo-bg: #FFFDF5;
   --color-neo-ink: #000000;
@@ -117,6 +135,8 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    min-width: -webkit-fit-content;
   }
 
   .neo-input::placeholder {
