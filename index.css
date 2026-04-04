@@ -19,19 +19,19 @@
 }
 
 @theme {
-  --color-neo-bg: #FFFDF5;
-  --color-neo-ink: #000000;
-  --color-neo-accent: #FF6B6B;
-  --color-neo-accent-hover: #E85555;
-  --color-neo-secondary: #FFD93D;
-  --color-neo-secondary-hover: #F5CC28;
-  --color-neo-muted: #C4B5FD;
+  --color-neo-bg: #FAFAFA;
+  --color-neo-ink: #0E0E0E;
+  --color-neo-accent: #00FFB3;
+  --color-neo-accent-hover: #00E6A3;
+  --color-neo-secondary: #F0E68C;
+  --color-neo-secondary-hover: #D4C87A;
+  --color-neo-muted: #FF0073;
   --color-neo-white: #FFFFFF;
 
   --font-sans: 'Space Grotesk', system-ui, sans-serif;
   --font-mono: 'Fira Code', monospace;
 
-  --color-neo-dark-card: #1a1a1a;
+  --color-neo-dark-card: #0E0E0E;
 }
 
 @utility neo-card {
@@ -85,7 +85,7 @@
 }
 
 @utility neo-badge-accent {
-  background-color: var(--color-neo-accent);
+  background-color: var(--color-neo-muted);
   color: var(--color-neo-white);
 }
 
@@ -125,7 +125,6 @@
 
 @layer base {
   html {
-    scroll-behavior: smooth;
     scroll-padding-top: 100px;
   }
 
@@ -175,6 +174,15 @@
 
 .shadow-neo-dark-xl {
   box-shadow: 16px 16px 0px 0px #fff;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.animate-blink {
+  animation: blink 1s infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
