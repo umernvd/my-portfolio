@@ -1,6 +1,12 @@
 import React from 'react';
 import { PortfolioData } from '../types';
-import { Code2, Server, Wrench, Languages, Globe, Smartphone, Database } from 'lucide-react';
+// import { Code2, Server, Wrench, Languages, Globe, Smartphone, Database } from 'lucide-react';
+import { 
+  Code, HardDrives, Wrench, Translate, Globe, DeviceMobile, Database,
+  SquaresFourIcon, DevicesIcon, PlugsConnectedIcon, CubeIcon, HardDrivesIcon, 
+  CloudCheckIcon, TableIcon, FireIcon, PaperPlaneTiltIcon, RocketIcon, 
+  SwatchesIcon 
+} from '@phosphor-icons/react';
 
 interface SkillsProps {
   data: PortfolioData['skills'];
@@ -9,13 +15,13 @@ interface SkillsProps {
 const Skills: React.FC<SkillsProps> = ({ data }) => {
   const getCategoryIcon = (title: string) => {
     switch (title.toLowerCase()) {
-      case 'frontend': return <Code2 className="w-6 h-6 stroke-[3px]" />;
-      case 'mobile': return <Smartphone className="w-6 h-6 stroke-[3px]" />;
-      case 'backend': return <Server className="w-6 h-6 stroke-[3px]" />;
-      case 'databases': return <Database className="w-6 h-6 stroke-[3px]" />;
-      case 'tools': return <Wrench className="w-6 h-6 stroke-[3px]" />;
-      case 'languages': return <Languages className="w-6 h-6 stroke-[3px]" />;
-      default: return <Code2 className="w-6 h-6 stroke-[3px]" />;
+      case 'frontend': return <Code className="w-6 h-6" weight="bold" />;
+      case 'mobile': return <DeviceMobile className="w-6 h-6" weight="bold" />;
+      case 'backend': return <HardDrives className="w-6 h-6" weight="bold" />;
+      case 'databases': return <Database className="w-6 h-6" weight="bold" />;
+      case 'tools': return <Wrench className="w-6 h-6" weight="bold" />;
+      case 'languages': return <Translate className="w-6 h-6" weight="bold" />;
+      default: return <Code className="w-6 h-6" weight="bold" />;
     }
   };
 
@@ -34,7 +40,8 @@ const Skills: React.FC<SkillsProps> = ({ data }) => {
   const getSkillIcon = (skill: string) => {
     const s = skill.toLowerCase();
 
-    if (s.includes('next.js')) return <i className="devicon-nextjs-original text-lg" />;
+    // Devicon icons (tech logos)
+    if (s.includes('next.js')) return <i className="devicon-nextjs-plain text-lg" />;
     if (s.includes('react')) return <i className="devicon-react-original colored text-lg" />;
     if (s.includes('html')) return <i className="devicon-html5-plain colored text-lg" />;
     if (s.includes('javascript')) return <i className="devicon-javascript-plain colored text-lg" />;
@@ -43,16 +50,34 @@ const Skills: React.FC<SkillsProps> = ({ data }) => {
     if (s.includes('flutter')) return <i className="devicon-flutter-plain colored text-lg" />;
     if (s.includes('node')) return <i className="devicon-nodejs-plain colored text-lg" />;
     if (s.includes('strapi')) return <i className="devicon-strapi-plain colored text-lg" />;
-    if (s.includes('api') || s.includes('oauth2') || s.includes('jwt')) return <Globe className="w-4 h-4 stroke-[3px] text-blue-600" />;
     if (s.includes('git') && !s.includes('hub')) return <i className="devicon-git-plain colored text-lg" />;
     if (s.includes('github')) return <i className="devicon-github-original text-lg" />;
-    if (s.includes('vs code')) return <i className="devicon-vscode-plain colored text-lg" />;
-    if (s.includes('firebase')) return <i className="devicon-firebase-plain colored text-lg" />;
-    if (s.includes('mysql') || s.includes('sql')) return <i className="devicon-mysql-plain colored text-lg" />;
+    if (s.includes('vs code') || s.includes('vscode')) return <i className="devicon-vscode-plain colored text-lg" />;
+    if (s.includes('firebase') && !s.includes('firestore')) return <i className="devicon-firebase-plain colored text-lg" />;
+    if (s.includes('mysql')) return <i className="devicon-mysql-plain colored text-lg" />;
     if (s.includes('python')) return <i className="devicon-python-plain colored text-lg" />;
     if (s.includes('typescript')) return <i className="devicon-typescript-plain colored text-lg" />;
-    if (s.includes('dart')) return <i className="devicon-dart-original colored text-lg" />;
+    if (s.includes('dart')) return <i className="devicon-dart-plain colored text-lg" />;
 
+    // Phosphor icons for generic concepts (fallbacks)
+    if (s.includes('api') || s.includes('oauth2') || s.includes('jwt')) 
+      return <Globe className="text-lg" weight="bold" />;
+    
+    if (s.includes('zustand')) return <SquaresFourIcon className="text-lg" weight="bold" />;
+    if (s.includes('responsive') || s.includes('web design')) 
+      return <DevicesIcon className="text-lg" weight="bold" />;
+    if (s.includes('provider')) return <PlugsConnectedIcon className="text-lg" weight="bold" />;
+    if (s.includes('hive')) return <CubeIcon className="text-lg" weight="bold" />;
+    if (s.includes('offline')) return <HardDrivesIcon className="text-lg" weight="bold" />;
+    if (s.includes('google drive')) return <HardDrivesIcon className="text-lg" weight="bold" />;
+    if (s.includes('appwrite')) return <CloudCheckIcon className="text-lg" weight="bold" />;
+    if (s.includes('sql')) return <TableIcon className="text-lg" weight="bold" />;
+    if (s.includes('firestore')) return <FireIcon className="text-lg" weight="bold" />;
+    if (s.includes('postman')) return <PaperPlaneTiltIcon className="text-lg" weight="bold" />;
+    if (s.includes('vercel')) return <RocketIcon className="text-lg" weight="bold" />;
+    if (s.includes('css')) return <SwatchesIcon className="text-lg" weight="bold" />;
+
+    // Default fallback
     return <div className="w-2 h-2 rounded-none bg-neo-ink" />;
   };
 

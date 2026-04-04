@@ -1,4 +1,5 @@
-import { AlertCircle, RefreshCw, Home } from 'lucide-react';
+// import { AlertCircle, RefreshCw, Home } from 'lucide-react';
+import { Warning, ArrowsClockwise, House } from '@phosphor-icons/react';
 
 interface ErrorFallbackProps {
   error: Error | null;
@@ -24,7 +25,7 @@ const ErrorFallback: React.FC<ErrorFallbackProps> = ({ error, resetError }) => {
       <div className="neo-card bg-neo-white max-w-md w-full p-8">
         <div className="flex justify-center mb-6">
           <div className="w-20 h-20 border-4 border-neo-ink shadow-neo-md flex items-center justify-center bg-neo-accent">
-            <AlertCircle className="w-10 h-10 stroke-[3px] text-neo-white" />
+            <Warning className="w-10 h-10 text-neo-white" weight="bold" />
           </div>
         </div>
 
@@ -49,7 +50,7 @@ const ErrorFallback: React.FC<ErrorFallbackProps> = ({ error, resetError }) => {
             onClick={handleReload}
             className="neo-btn neo-btn-primary flex-1 inline-flex items-center justify-center gap-2"
           >
-            <RefreshCw className="w-5 h-5 stroke-[3px]" />
+            <ArrowsClockwise className="w-5 h-5" weight="bold" />
             TRY AGAIN
           </button>
 
@@ -57,7 +58,7 @@ const ErrorFallback: React.FC<ErrorFallbackProps> = ({ error, resetError }) => {
             onClick={handleGoHome}
             className="neo-btn neo-btn-outline flex-1 inline-flex items-center justify-center gap-2"
           >
-            <Home className="w-5 h-5 stroke-[3px]" />
+            <House className="w-5 h-5" weight="bold" />
             GO HOME
           </button>
         </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { PortfolioData } from '../types';
-import { Award, CheckCircle2 } from 'lucide-react';
+// import { Award, CheckCircle2 } from 'lucide-react';
+import { Medal, CheckCircle } from '@phosphor-icons/react';
 
 interface CertificationsProps {
   data: PortfolioData['certifications'];
@@ -38,14 +39,14 @@ const Certifications: React.FC<CertificationsProps> = ({ data }) => {
                   ${idx % 3 === 0 ? 'bg-neo-accent' : idx % 3 === 1 ? 'bg-neo-secondary' : 'bg-neo-muted'}
                   flex-shrink-0
                 `}>
-                  <Award className="w-6 h-6 stroke-[3px] text-neo-ink" />
+                  <Medal className="w-6 h-6" weight="bold" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <h3 className="font-black text-base lg:text-lg uppercase tracking-tight text-neo-ink mb-2 leading-tight">
                     {cert.name}
                   </h3>
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 stroke-[3px] text-neo-accent flex-shrink-0" />
+                    <CheckCircle className="w-4 h-4 text-neo-accent flex-shrink-0" weight="bold" />
                     <span className="font-bold text-sm text-neo-ink/70">
                       {cert.provider}
                     </span>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { PortfolioData } from '../types';
-import { GraduationCap } from 'lucide-react';
+// import { GraduationCap } from 'lucide-react';
+import { GraduationCap } from '@phosphor-icons/react';
 
 interface EducationProps {
   data: PortfolioData['education'];
@@ -30,7 +31,7 @@ const Education: React.FC<EducationProps> = ({ data }) => {
               <div className="flex flex-col md:flex-row gap-6 p-6 lg:p-8">
                 <div className="flex-shrink-0">
                   <div className="p-4 border-4 border-neo-ink shadow-neo-sm bg-neo-accent">
-                    <GraduationCap className="w-8 h-8 stroke-[3px] text-neo-white" />
+                    <GraduationCap className="w-8 h-8 text-neo-white" weight="bold" />
                   </div>
                 </div>
 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { PortfolioData } from '../types';
-import { Github, Linkedin, Mail, Send, CheckCircle, Loader2 } from 'lucide-react';
+// import { Github, Linkedin, Mail, Send, CheckCircle, Loader2 } from 'lucide-react';
+import { GithubLogo, LinkedinLogo, EnvelopeSimple, PaperPlaneTilt, CheckCircle, Spinner } from '@phosphor-icons/react';
 
 interface FooterProps {
   data: PortfolioData['personalInfo'];
@@ -51,7 +52,7 @@ const Footer: React.FC<FooterProps> = ({ data }) => {
                   transition-all duration-100 font-bold
                 "
               >
-                <Mail className="w-6 h-6 stroke-[3px]" />
+                <EnvelopeSimple className="w-6 h-6" weight="bold" />
                 {data.email}
               </a>
             </div>
@@ -70,7 +71,7 @@ const Footer: React.FC<FooterProps> = ({ data }) => {
                 "
                 aria-label="GitHub"
               >
-                <Github className="w-7 h-7 stroke-[3px]" />
+                <GithubLogo className="w-7 h-7" weight="bold" />
               </a>
               <a
                 href={data.linkedin}
@@ -85,7 +86,7 @@ const Footer: React.FC<FooterProps> = ({ data }) => {
                 "
                 aria-label="LinkedIn"
               >
-                <Linkedin className="w-7 h-7 stroke-[3px]" />
+                <LinkedinLogo className="w-7 h-7" weight="bold" />
               </a>
             </div>
           </div>
@@ -101,7 +102,7 @@ const Footer: React.FC<FooterProps> = ({ data }) => {
                   border-4 border-neo-white shadow-neo-dark-sm
                   bg-neo-secondary mb-6
                 ">
-                  <CheckCircle className="w-10 h-10 stroke-[3px] text-neo-ink" />
+                  <CheckCircle className="w-10 h-10 text-neo-ink" weight="bold" />
                 </div>
                 <h3 className="text-2xl lg:text-3xl font-black uppercase tracking-tight text-neo-white mb-2">
                   MESSAGE SENT!
@@ -176,12 +177,12 @@ const Footer: React.FC<FooterProps> = ({ data }) => {
                 >
                   {isSubmitting ? (
                     <>
-                      <Loader2 className="w-5 h-5 stroke-[3px] animate-spin" />
+                      <Spinner className="w-5 h-5 animate-spin" weight="bold" />
                       SENDING...
                     </>
                   ) : (
                     <>
-                      <Send className="w-5 h-5 stroke-[3px]" />
+                      <PaperPlaneTilt className="w-5 h-5" weight="bold" />
                       SEND MESSAGE
                     </>
                   )}
@@ -197,7 +198,7 @@ const Footer: React.FC<FooterProps> = ({ data }) => {
           text-sm font-bold uppercase tracking-wide
         ">
           <p>© {new Date().getFullYear()} {data.name.toUpperCase()}. ALL RIGHTS RESERVED.</p>
-          <p className="mt-2 md:mt-0">DESIGNED & BUILT BY {data.name.split(' ').pop()?.toUpperCase()}</p>
+          <p className="mt-2 md:mt-0">DESIGNED & BUILT BY {data.name.toUpperCase()}</p>
         </div>
       </div>
     </footer>

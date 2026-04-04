@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+// import { Menu, X } from 'lucide-react';
+import { List, X } from '@phosphor-icons/react';
+import TypewriterWords from './TypewriterWords';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -55,13 +57,24 @@ const Navbar: React.FC = () => {
               href="#"
               onClick={(e) => handleNavClick(e, '#')}
               className="
-                font-black text-2xl tracking-tighter uppercase
+                font-black text-lg sm:text-xl md:text-2xl tracking-tighter uppercase
                 bg-neo-secondary border-4 border-neo-ink shadow-neo-sm px-3 py-1
                 hover:bg-neo-accent hover:text-neo-white
                 transition-all duration-100
               "
             >
-              MUN<span className="text-neo-accent">.</span>
+              <TypewriterWords 
+                words={[
+                  "SOFTWARE ENGINEER",
+                  "MOBILE APP DEVELOPER",
+                  "FULL STACK DEVELOPER",
+                  "WEB DEVELOPER"
+                ]}
+                typingSpeed={150}
+                deletingSpeed={75}
+                pauseAfterTyping={2000}
+                emptyPause={500}
+              />
             </a>
           </div>
 
@@ -95,7 +108,7 @@ const Navbar: React.FC = () => {
               {isOpen ? (
                 <X className="w-6 h-6 stroke-[3px]" />
               ) : (
-                <Menu className="w-6 h-6 stroke-[3px]" />
+                <List className="w-6 h-6" weight="bold" />
               )}
             </button>
           </div>

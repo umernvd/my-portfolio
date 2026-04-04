@@ -1,5 +1,6 @@
 import React from 'react';
-import { Github, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+// import { Github, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import { GithubLogo, LinkedinLogo, EnvelopeSimple, Phone, MapPin } from '@phosphor-icons/react';
 import { PortfolioData } from '../types';
 
 interface HeroProps {
@@ -22,13 +23,7 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
             ">
               HI, I'M{' '}
               <span className="bg-neo-accent px-4 border-4 border-neo-ink shadow-neo-md inline-block rotate-1">
-                {data.name.split(' ').map((part, i) => (
-                  <React.Fragment key={i}>
-                    {i === 1 && <br />}
-                    {part}
-                    {i === 0 && ' '}
-                  </React.Fragment>
-                ))}
+                {data.name}
               </span>
             </h1>
             
@@ -51,7 +46,7 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
               ">
                 <img
                   src="/profile.png"
-                  alt="Muhammad Umer Naveed"
+                  alt="Umer Naveed"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -78,7 +73,7 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
                   active:translate-x-[2px] active:translate-y-[2px] active:shadow-none
                 "
               >
-                <Mail className="w-5 h-5 stroke-[3px]" />
+                <EnvelopeSimple className="w-5 h-5" weight="bold" />
                 CONTACT ME
               </a>
               <a
@@ -92,7 +87,7 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
                   active:translate-x-[2px] active:translate-y-[2px] active:shadow-none
                 "
               >
-                <Linkedin className="w-5 h-5 stroke-[3px] text-blue-600" />
+                <LinkedinLogo className="w-5 h-5 text-blue-600" weight="bold" />
                 LINKEDIN
               </a>
               <a
@@ -106,7 +101,7 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
                   active:translate-x-[2px] active:translate-y-[2px] active:shadow-none
                 "
               >
-                <Github className="w-5 h-5 stroke-[3px]" />
+                <GithubLogo className="w-5 h-5" weight="bold" />
                 GITHUB
               </a>
             </div>
@@ -120,7 +115,7 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
                 href={`mailto:${data.email}`}
                 className="flex items-center gap-2 hover:text-neo-accent transition-colors"
               >
-                <Mail className="w-4 h-4 stroke-[3px]" />
+                <EnvelopeSimple className="w-4 h-4" weight="bold" />
                 {data.email}
               </a>
               <a 
@@ -155,7 +150,7 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
               ">
                 <img
                   src="/profile.png"
-                  alt="Muhammad Umer Naveed"
+                  alt="Umer Naveed"
                   className="w-full h-full object-cover"
                 />
               </div>

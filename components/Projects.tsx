@@ -1,6 +1,7 @@
 import React from 'react';
 import { PortfolioData } from '../types';
-import { Github, ExternalLink, FolderGit2 } from 'lucide-react';
+// import { Github, ExternalLink, FolderGit2 } from 'lucide-react';
+import { GithubLogo, ArrowSquareOut, FolderOpen } from '@phosphor-icons/react';
 
 interface ProjectsProps {
   data: PortfolioData['projects'];
@@ -32,7 +33,7 @@ const Projects: React.FC<ProjectsProps> = ({ data }) => {
               active:translate-x-[2px] active:translate-y-[2px] active:shadow-none
             "
           >
-            VIEW ALL <Github className="w-4 h-4 stroke-[3px]" />
+            VIEW ALL <GithubLogo className="w-4 h-4" weight="bold" />
           </a>
         </div>
 
@@ -51,7 +52,7 @@ const Projects: React.FC<ProjectsProps> = ({ data }) => {
               <div className="p-6 lg:p-8 flex-1">
                 <div className="flex justify-between items-start mb-4">
                   <div className="p-4 border-4 border-neo-ink shadow-neo-sm bg-neo-secondary">
-                    <FolderGit2 className="w-8 h-8 stroke-[3px]" />
+                    <FolderOpen className="w-8 h-8" weight="bold" />
                   </div>
                   <a
                     href={project.link || "https://github.com/umernvd"}
@@ -65,7 +66,7 @@ const Projects: React.FC<ProjectsProps> = ({ data }) => {
                     "
                     aria-label={`View ${project.title} on GitHub`}
                   >
-                    <Github className="w-6 h-6 stroke-[3px]" />
+                    <GithubLogo className="w-6 h-6" weight="bold" />
                   </a>
                 </div>
 
@@ -116,7 +117,7 @@ const Projects: React.FC<ProjectsProps> = ({ data }) => {
                     active:translate-x-[2px] active:translate-y-[2px] active:shadow-none
                   "
                 >
-                  <ExternalLink className="w-4 h-4 stroke-[3px]" />
+                  <ArrowSquareOut className="w-4 h-4" weight="bold" />
                   VIEW PROJECT
                 </a>
               </div>
