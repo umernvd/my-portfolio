@@ -1,4 +1,3 @@
-import React from 'react';
 import { PortfolioData } from '../types';
 import { Medal, CheckCircle } from '@phosphor-icons/react';
 
@@ -6,7 +5,7 @@ interface CertificationsProps {
   data: PortfolioData['certifications'];
 }
 
-const Certifications: React.FC<CertificationsProps> = ({ data }) => {
+function Certifications({ data }: CertificationsProps) {
   const rotations = ['md:rotate-2', 'md:-rotate-1', 'md:rotate-1', 'md:-rotate-2', 'md:rotate-3', 'md:-rotate-3'];
 
   return (
@@ -58,6 +57,6 @@ const Certifications: React.FC<CertificationsProps> = ({ data }) => {
       </div>
     </section>
   );
-};
+}
 
 export default Certifications;

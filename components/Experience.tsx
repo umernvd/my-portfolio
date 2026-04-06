@@ -1,11 +1,10 @@
-import React from 'react';
 import { PortfolioData } from '../types';
 
 interface ExperienceProps {
   data: PortfolioData['experience'];
 }
 
-const Experience: React.FC<ExperienceProps> = ({ data }) => {
+function Experience({ data }: ExperienceProps) {
   return (
     <section id="experience" className="py-20 lg:py-32 bg-retro-secondary/30 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -60,6 +59,6 @@ const Experience: React.FC<ExperienceProps> = ({ data }) => {
       </div>
     </section>
   );
-};
+}
 
 export default Experience;

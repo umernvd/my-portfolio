@@ -1,4 +1,3 @@
-import React from 'react';
 import { PortfolioData } from '../types';
 import { GraduationCap } from '@phosphor-icons/react';
 
@@ -6,7 +5,7 @@ interface EducationProps {
   data: PortfolioData['education'];
 }
 
-const Education: React.FC<EducationProps> = ({ data }) => {
+function Education({ data }: EducationProps) {
   return (
     <section id="education" className="py-20 lg:py-32 bg-retro-bg relative">
       <div className="absolute inset-0 bg-halftone opacity-20"></div>
@@ -64,6 +63,6 @@ const Education: React.FC<EducationProps> = ({ data }) => {
       </div>
     </section>
   );
-};
+}
 
 export default Education;

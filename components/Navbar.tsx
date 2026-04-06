@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { List, X } from '@phosphor-icons/react';
 import TypewriterWords from './TypewriterWords';
 
-const Navbar: React.FC = () => {
+function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -137,6 +137,6 @@ const Navbar: React.FC = () => {
       )}
     </nav>
   );
-};
+}
 
 export default Navbar;

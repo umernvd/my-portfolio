@@ -1,4 +1,3 @@
-import React from 'react';
 import { GithubLogo, LinkedinLogo, EnvelopeSimple } from '@phosphor-icons/react';
 import { PortfolioData } from '../types';
 
@@ -6,7 +5,7 @@ interface HeroProps {
   data: PortfolioData['personalInfo'];
 }
 
-const Hero: React.FC<HeroProps> = ({ data }) => {
+function Hero({ data }: HeroProps) {
   return (
     <section id="about" className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -128,6 +127,6 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
       </div>
     </section>
   );
-};
+}
 
 export default Hero;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { PortfolioData } from '../types';
 import { GithubLogo, LinkedinLogo, EnvelopeSimple, PaperPlaneTilt, CheckCircle, Spinner } from '@phosphor-icons/react';
 
@@ -6,7 +6,7 @@ interface FooterProps {
   data: PortfolioData['personalInfo'];
 }
 
-const Footer: React.FC<FooterProps> = ({ data }) => {
+function Footer({ data }: FooterProps) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -198,6 +198,6 @@ const Footer: React.FC<FooterProps> = ({ data }) => {
       </div>
     </footer>
   );
-};
+}
 
 export default Footer;

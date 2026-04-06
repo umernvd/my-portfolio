@@ -1,4 +1,3 @@
-import React from 'react';
 import { PortfolioData } from '../types';
 import { 
   Code, HardDrives, Wrench, Translate, Globe, DeviceMobile, Database,
@@ -12,7 +11,7 @@ interface SkillsProps {
   data: PortfolioData['skills'];
 }
 
-const Skills: React.FC<SkillsProps> = ({ data }) => {
+function Skills({ data }: SkillsProps) {
   const getCategoryIcon = (title: string) => {
     switch (title.toLowerCase()) {
       case 'frontend': return <Code className="w-6 h-6" weight="bold" />;
@@ -141,6 +140,6 @@ const Skills: React.FC<SkillsProps> = ({ data }) => {
       </div>
     </section>
   );
-};
+}
 
 export default Skills;

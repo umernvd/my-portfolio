@@ -1,4 +1,3 @@
-import React from 'react';
 import { PortfolioData } from '../types';
 import { GithubLogo, ArrowSquareOut, FolderOpen } from '@phosphor-icons/react';
 
@@ -6,7 +5,7 @@ interface ProjectsProps {
   data: PortfolioData['projects'];
 }
 
-const Projects: React.FC<ProjectsProps> = ({ data }) => {
+function Projects({ data }: ProjectsProps) {
   return (
     <section id="projects" className="py-20 lg:py-32 bg-retro-bg relative">
       <div className="absolute inset-0 bg-halftone opacity-30"></div>
@@ -123,6 +122,6 @@ const Projects: React.FC<ProjectsProps> = ({ data }) => {
       </div>
     </section>
   );
-};
+}
 
 export default Projects;
