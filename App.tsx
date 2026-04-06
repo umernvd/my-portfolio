@@ -6,7 +6,6 @@ import Experience from './components/Experience';
 import Education from './components/Education';
 import Certifications from './components/Certifications';
 import Footer from './components/Footer';
-import RevealOnScroll from './components/RevealOnScroll';
 import ErrorBoundary from './components/ErrorBoundary';
 import { SmoothScrollProvider } from './components/SmoothScrollProvider';
 import { portfolioData } from './data';
@@ -18,39 +17,27 @@ function App() {
         <Navbar />
         <main>
           <ErrorBoundary>
-            <RevealOnScroll>
-              <Hero data={portfolioData.personalInfo} />
-            </RevealOnScroll>
+            <Hero data={portfolioData.personalInfo} />
           </ErrorBoundary>
           
           <ErrorBoundary>
-            <RevealOnScroll>
-              <Skills data={portfolioData.skills} />
-            </RevealOnScroll>
+            <Skills data={portfolioData.skills} />
           </ErrorBoundary>
           
           <ErrorBoundary>
-            <RevealOnScroll>
-              <Projects data={portfolioData.projects} />
-            </RevealOnScroll>
+            <Projects data={portfolioData.projects} />
           </ErrorBoundary>
           
           <ErrorBoundary>
-            <RevealOnScroll>
-              <Experience data={portfolioData.experience} />
-            </RevealOnScroll>
+            <Experience data={portfolioData.experience} />
           </ErrorBoundary>
           
           <ErrorBoundary>
-            <RevealOnScroll>
-              <Education data={portfolioData.education} />
-            </RevealOnScroll>
+            <Education data={portfolioData.education} />
           </ErrorBoundary>
           
           <ErrorBoundary>
-            <RevealOnScroll>
-              <Certifications data={portfolioData.certifications} />
-            </RevealOnScroll>
+            <Certifications data={portfolioData.certifications} />
           </ErrorBoundary>
         </main>
         <ErrorBoundary>
