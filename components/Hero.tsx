@@ -1,5 +1,5 @@
 import React from 'react';
-import { GithubLogo, LinkedinLogo, EnvelopeSimple, Phone, MapPin } from '@phosphor-icons/react';
+import { GithubLogo, LinkedinLogo, EnvelopeSimple } from '@phosphor-icons/react';
 import { PortfolioData } from '../types';
 
 interface HeroProps {
@@ -18,7 +18,7 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
               mb-6
             ">
               HI, I'M{' '}
-              <span className="bg-neo-accent px-4 border-4 border-neo-ink shadow-neo-md inline-block rotate-1">
+              <span className="bg-retro-accent px-4 border-4 border-retro-ink shadow-retro-md inline-block rotate-1">
                 {data.name}
               </span>
             </h1>
@@ -26,7 +26,7 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
             <h2 className="
               text-xl md:text-2xl lg:text-3xl 
               font-bold mb-8
-              text-neo-ink/80
+              text-retro-ink/80
             ">
               {data.title.toUpperCase()} BUILDING DIGITAL EXPERIENCES
             </h2>
@@ -34,10 +34,10 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
             <div className="lg:hidden flex justify-center mb-8">
               <div className="
                 w-64 h-64 rounded-none 
-                border-4 border-neo-ink shadow-neo-lg
-                bg-neo-white overflow-hidden
+                border-4 border-retro-ink shadow-retro-lg
+                bg-retro-white overflow-hidden
                 rotate-1
-                hover:-translate-y-1 hover:shadow-neo-xl
+                hover:-translate-y-1 hover:shadow-retro-xl
                 transition-all duration-200
               ">
                 <img
@@ -63,10 +63,9 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
               <a
                 href="#contact"
                 className="
-                  neo-btn neo-btn-primary
+                  retro-btn retro-btn-primary
                   inline-flex items-center justify-center gap-2
-                  hover:bg-neo-accent-hover
-                  active:translate-x-[2px] active:translate-y-[2px] active:shadow-none
+                  hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px]
                 "
               >
                 <EnvelopeSimple className="w-5 h-5" weight="bold" />
@@ -77,10 +76,9 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="
-                  neo-btn neo-btn-outline
+                  retro-btn retro-btn-outline
                   inline-flex items-center justify-center gap-2
-                  hover:bg-neo-muted
-                  active:translate-x-[2px] active:translate-y-[2px] active:shadow-none
+                  hover:bg-retro-bg hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px]
                 "
               >
                 <LinkedinLogo className="w-5 h-5 text-blue-600" weight="bold" />
@@ -91,40 +89,14 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="
-                  neo-btn neo-btn-outline
+                  retro-btn retro-btn-outline
                   inline-flex items-center justify-center gap-2
-                  hover:bg-neo-muted
-                  active:translate-x-[2px] active:translate-y-[2px] active:shadow-none
+                  hover:bg-retro-bg hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px]
                 "
               >
                 <GithubLogo className="w-5 h-5" weight="bold" />
                 GITHUB
               </a>
-            </div>
-
-            <div className="
-              flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6 
-              text-xs sm:text-sm font-bold
-              border-t-4 border-neo-ink pt-8
-            ">
-              <a 
-                href={`mailto:${data.email}`}
-                className="flex items-center gap-2 hover:text-neo-accent transition-colors"
-              >
-                <EnvelopeSimple className="w-4 h-4" weight="bold" />
-                {data.email}
-              </a>
-              <a 
-                href={`tel:${data.phone}`}
-                className="flex items-center gap-2 hover:text-neo-accent transition-colors"
-              >
-                <Phone className="w-4 h-4 stroke-[3px]" />
-                {data.phone}
-              </a>
-              <span className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 stroke-[3px]" />
-                {data.location}
-              </span>
             </div>
           </div>
 
@@ -132,16 +104,16 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
             <div className="relative w-80 h-80 xl:w-96 xl:h-96">
               <div className="
                 absolute -top-4 -right-4 w-full h-full
-                border-4 border-neo-ink
-                bg-neo-muted/50
+                border-4 border-retro-ink
+                bg-retro-secondary/50
                 rotate-3
               "></div>
               <div className="
                 w-full h-full rounded-none
-                border-4 border-neo-ink shadow-neo-xl
-                bg-neo-white overflow-hidden
+                border-4 border-retro-ink shadow-retro-xl
+                bg-retro-white overflow-hidden
                 -rotate-1
-                hover:rotate-0 hover:-translate-y-2 hover:shadow-neo-xl
+                hover:rotate-0 hover:-translate-y-2 hover:shadow-retro-xl
                 transition-all duration-200
               ">
                 <img

@@ -14,7 +14,7 @@ import { portfolioData } from './data';
 function App() {
   return (
     <SmoothScrollProvider>
-      <div className="min-h-screen bg-neo-bg overflow-x-hidden">
+      <div className="min-h-screen bg-retro-bg overflow-x-hidden">
         <Navbar />
         <main>
           <ErrorBoundary>

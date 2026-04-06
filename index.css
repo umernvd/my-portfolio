@@ -19,55 +19,61 @@
 }
 
 @theme {
-  --color-neo-bg: #FAFAFA;
-  --color-neo-ink: #0E0E0E;
-  --color-neo-accent: #00FFB3;
-  --color-neo-accent-hover: #00E6A3;
-  --color-neo-secondary: #F0E68C;
-  --color-neo-secondary-hover: #D4C87A;
-  --color-neo-muted: #FF0073;
-  --color-neo-white: #FFFFFF;
+  --color-retro-bg: #F5F5F5;
+  --color-retro-ink: #1A1A1A;
+  --color-retro-accent: #A3BE8C;
+  --color-retro-accent-hover: #8FAD7D;
+  --color-retro-secondary: #C678DD;
+  --color-retro-secondary-hover: #B060CC;
+  --color-retro-tertiary: #D19A66;
+  --color-retro-tertiary-hover: #C28A56;
+  --color-retro-white: #FFFFFF;
 
   --font-sans: 'Space Grotesk', system-ui, sans-serif;
   --font-mono: 'Fira Code', monospace;
 
-  --color-neo-dark-card: #0E0E0E;
+  --color-retro-dark-card: #1A1A1A;
 }
 
-@utility neo-card {
-  background-color: var(--color-neo-white);
+@utility retro-card {
+  background-color: var(--color-retro-white);
   border-width: 4px;
-  border-color: var(--color-neo-ink);
-  box-shadow: 8px 8px 0px 0px #000;
+  border-color: var(--color-retro-ink);
+  box-shadow: 8px 8px 0px 0px var(--color-retro-ink);
 }
 
-@utility neo-btn {
+@utility retro-btn {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   border-width: 4px;
-  border-color: var(--color-neo-ink);
-  box-shadow: 4px 4px 0px 0px #000;
+  border-color: var(--color-retro-ink);
+  box-shadow: 4px 4px 0px 0px var(--color-retro-ink);
   padding: 0.75rem 1.5rem;
   cursor: pointer;
 }
 
-@utility neo-btn-primary {
-  background-color: var(--color-neo-accent);
-  color: var(--color-neo-ink);
+@utility retro-btn-primary {
+  background-color: var(--color-retro-accent);
+  color: var(--color-retro-ink);
 }
 
-@utility neo-btn-secondary {
-  background-color: var(--color-neo-secondary);
-  color: var(--color-neo-ink);
+@utility retro-btn-secondary {
+  background-color: var(--color-retro-secondary);
+  color: var(--color-retro-white);
 }
 
-@utility neo-btn-outline {
-  background-color: var(--color-neo-white);
-  color: var(--color-neo-ink);
+@utility retro-btn-outline {
+  background-color: var(--color-retro-white);
+  color: var(--color-retro-ink);
 }
 
-@utility neo-badge {
+@utility retro-btn-tertiary {
+  background-color: var(--color-retro-tertiary);
+  color: var(--color-retro-ink);
+}
+
+@utility retro-badge {
   display: inline-block;
   padding: 0.25rem 0.75rem;
   font-weight: 700;
@@ -75,21 +81,27 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
   border-width: 4px;
-  border-color: var(--color-neo-ink);
-  box-shadow: 4px 4px 0px 0px #000;
-  background-color: var(--color-neo-white);
+  border-color: var(--color-retro-ink);
+  box-shadow: 4px 4px 0px 0px var(--color-retro-ink);
+  background-color: var(--color-retro-white);
 }
 
-@utility neo-badge-secondary {
-  background-color: var(--color-neo-secondary);
+@utility retro-badge-secondary {
+  background-color: var(--color-retro-secondary);
+  color: var(--color-retro-white);
 }
 
-@utility neo-badge-accent {
-  background-color: var(--color-neo-muted);
-  color: var(--color-neo-white);
+@utility retro-badge-accent {
+  background-color: var(--color-retro-accent);
+  color: var(--color-retro-ink);
 }
 
-@utility neo-input {
+@utility retro-badge-tertiary {
+  background-color: var(--color-retro-tertiary);
+  color: var(--color-retro-ink);
+}
+
+@utility retro-input {
   width: 100%;
   padding: 0.75rem 1rem;
   border-width: 4px;
@@ -97,30 +109,30 @@
   font-size: 1.125rem;
 }
 
-@utility neo-section-title {
+@utility retro-section-title {
   font-size: 2.25rem;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: -0.05em;
 }
 
-@utility neo-skill-badge {
+@utility retro-skill-badge {
   border-width: 4px;
-  border-color: var(--color-neo-ink);
-  box-shadow: 4px 4px 0px 0px #000;
-  background-color: var(--color-neo-white);
+  border-color: var(--color-retro-ink);
+  box-shadow: 4px 4px 0px 0px var(--color-retro-ink);
+  background-color: var(--color-retro-white);
   padding: 0.5rem 0.75rem;
   font-family: var(--font-mono);
   font-size: 0.875rem;
   font-weight: 700;
 }
 
-@utility neo-link {
+@utility retro-link {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   border-bottom-width: 4px;
-  border-color: var(--color-neo-accent);
+  border-color: var(--color-retro-accent);
 }
 
 @layer base {
@@ -129,8 +141,8 @@
   }
 
   body {
-    background-color: var(--color-neo-bg);
-    color: var(--color-neo-ink);
+    background-color: var(--color-retro-bg);
+    color: var(--color-retro-ink);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -138,13 +150,13 @@
     min-width: -webkit-fit-content;
   }
 
-  .neo-input::placeholder {
+  .retro-input::placeholder {
     color: rgb(0 0 0 / 0.4);
   }
 }
 
 .bg-halftone {
-  background-image: radial-gradient(#000 1.5px, transparent 1.5px);
+  background-image: radial-gradient(var(--color-retro-ink) 1.5px, transparent 1.5px);
   background-size: 20px 20px;
 }
 
@@ -156,23 +168,23 @@
 }
 
 .text-stroke {
-  -webkit-text-stroke: 2px #000;
+  -webkit-text-stroke: 2px var(--color-retro-ink);
   color: transparent;
 }
 
-.shadow-neo-dark-sm {
+.shadow-retro-dark-sm {
   box-shadow: 4px 4px 0px 0px #fff;
 }
 
-.shadow-neo-dark-md {
+.shadow-retro-dark-md {
   box-shadow: 8px 8px 0px 0px #fff;
 }
 
-.shadow-neo-dark-lg {
+.shadow-retro-dark-lg {
   box-shadow: 12px 12px 0px 0px #fff;
 }
 
-.shadow-neo-dark-xl {
+.shadow-retro-dark-xl {
   box-shadow: 16px 16px 0px 0px #fff;
 }
 

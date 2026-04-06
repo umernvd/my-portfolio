@@ -30,14 +30,14 @@ const Footer: React.FC<FooterProps> = ({ data }) => {
   };
 
   return (
-    <footer id="contact" className="bg-neo-ink text-neo-white py-16 lg:py-24 border-t-4 border-neo-accent">
+    <footer id="contact" className="bg-retro-ink text-retro-white py-16 lg:py-24 border-t-4 border-retro-accent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           <div>
-            <h2 className="neo-section-title text-neo-white mb-6">
+            <h2 className="retro-section-title text-retro-white mb-6">
               LET'S CONNECT
             </h2>
-            <p className="text-lg lg:text-xl leading-relaxed mb-8 text-neo-white/80">
+            <p className="text-lg lg:text-xl leading-relaxed mb-8 text-retro-white/80">
               INTERESTED IN NEW OPPORTUNITIES. HAVE A QUESTION? DROP A MESSAGE!
             </p>
 
@@ -46,8 +46,8 @@ const Footer: React.FC<FooterProps> = ({ data }) => {
                 href={`mailto:${data.email}`} 
                 className="
                   flex items-center gap-3 
-                  p-4 border-4 border-neo-white shadow-neo-dark-sm bg-neo-dark-card
-                  hover:bg-neo-accent hover:border-neo-accent
+                  p-4 border-4 border-retro-white shadow-retro-dark-sm bg-retro-dark-card
+                  hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px]
                   transition-all duration-100 font-bold
                 "
               >
@@ -63,10 +63,9 @@ const Footer: React.FC<FooterProps> = ({ data }) => {
                 rel="noopener noreferrer"
                 className="
                   w-14 h-14 flex items-center justify-center
-                  border-4 border-neo-white shadow-neo-dark-sm bg-neo-dark-card
-                  hover:bg-neo-accent hover:border-neo-accent hover:shadow-neo-dark-lg
+                  border-4 border-retro-white shadow-retro-dark-sm bg-retro-dark-card
+                  hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px]
                   transition-all duration-100
-                  active:translate-x-[2px] active:translate-y-[2px] active:shadow-none
                 "
                 aria-label="GitHub"
               >
@@ -78,10 +77,9 @@ const Footer: React.FC<FooterProps> = ({ data }) => {
                 rel="noopener noreferrer"
                 className="
                   w-14 h-14 flex items-center justify-center
-                  border-4 border-neo-white shadow-neo-dark-sm bg-neo-dark-card
-                  hover:bg-neo-accent hover:border-neo-accent hover:shadow-neo-dark-lg
+                  border-4 border-retro-white shadow-retro-dark-sm bg-retro-dark-card
+                  hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px]
                   transition-all duration-100
-                  active:translate-x-[2px] active:translate-y-[2px] active:shadow-none
                 "
                 aria-label="LinkedIn"
               >
@@ -91,29 +89,29 @@ const Footer: React.FC<FooterProps> = ({ data }) => {
           </div>
 
           <div className="
-            border-4 border-neo-white shadow-neo-dark-md
-            bg-neo-dark-card p-6 md:p-8
+            border-4 border-retro-white shadow-retro-dark-md
+            bg-retro-dark-card p-6 md:p-8
           ">
             {isSubmitted ? (
               <div className="h-full flex flex-col items-center justify-center text-center py-8">
                 <div className="
                   w-20 h-20 flex items-center justify-center
-                  border-4 border-neo-white shadow-neo-dark-sm
-                  bg-neo-secondary mb-6
+                  border-4 border-retro-white shadow-retro-dark-sm
+                  bg-retro-secondary mb-6
                 ">
-                  <CheckCircle className="w-10 h-10 text-neo-ink" weight="bold" />
+                  <CheckCircle className="w-10 h-10 text-retro-ink" weight="bold" />
                 </div>
-                <h3 className="text-2xl lg:text-3xl font-black uppercase tracking-tight text-neo-white mb-2">
+                <h3 className="text-2xl lg:text-3xl font-black uppercase tracking-tight text-retro-white mb-2">
                   MESSAGE SENT!
                 </h3>
-                <p className="font-medium max-w-xs mx-auto text-neo-white/80 mb-8">
+                <p className="font-medium max-w-xs mx-auto text-retro-white/80 mb-8">
                   THANKS FOR REACHING OUT. I'LL GET BACK TO YOU SOON.
                 </p>
                 <button
                   onClick={() => setIsSubmitted(false)}
                   className="
-                    neo-btn neo-btn-secondary
-                    hover:bg-neo-accent hover:text-neo-white
+                    retro-btn retro-btn-secondary
+                    hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px]
                   "
                 >
                   SEND ANOTHER
@@ -122,7 +120,7 @@ const Footer: React.FC<FooterProps> = ({ data }) => {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
-                  <label htmlFor="name" className="block font-bold text-sm uppercase tracking-wide mb-2 text-neo-white/80">
+                  <label htmlFor="name" className="block font-bold text-sm uppercase tracking-wide mb-2 text-retro-white/80">
                     NAME
                   </label>
                   <input
@@ -132,11 +130,11 @@ const Footer: React.FC<FooterProps> = ({ data }) => {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="neo-input bg-neo-dark-card border-neo-white text-neo-white"
+                    className="retro-input bg-retro-dark-card border-retro-white text-retro-white"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block font-bold text-sm uppercase tracking-wide mb-2 text-neo-white/80">
+                  <label htmlFor="email" className="block font-bold text-sm uppercase tracking-wide mb-2 text-retro-white/80">
                     EMAIL
                   </label>
                   <input
@@ -146,11 +144,11 @@ const Footer: React.FC<FooterProps> = ({ data }) => {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="neo-input bg-neo-dark-card border-neo-white text-neo-white"
+                    className="retro-input bg-retro-dark-card border-retro-white text-retro-white"
                   />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block font-bold text-sm uppercase tracking-wide mb-2 text-neo-white/80">
+                  <label htmlFor="message" className="block font-bold text-sm uppercase tracking-wide mb-2 text-retro-white/80">
                     MESSAGE
                   </label>
                   <textarea
@@ -160,18 +158,16 @@ const Footer: React.FC<FooterProps> = ({ data }) => {
                     rows={4}
                     value={formData.message}
                     onChange={handleChange}
-                    className="neo-input bg-neo-dark-card border-neo-white text-neo-white resize-none"
+                    className="retro-input bg-retro-dark-card border-retro-white text-retro-white resize-none"
                   />
                 </div>
                 <button
                   type="submit"
                   disabled={isSubmitting}
                   className="
-                    neo-btn neo-btn-primary w-full
-                    bg-neo-accent text-neo-white border-neo-white shadow-neo-dark-sm
-                    hover:bg-neo-secondary hover:text-neo-ink
+                    retro-btn retro-btn-tertiary w-full
+                    hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px]
                     disabled:opacity-70 disabled:cursor-not-allowed
-                    active:translate-x-[2px] active:translate-y-[2px] active:shadow-none
                   "
                 >
                   {isSubmitting ? (
@@ -192,7 +188,7 @@ const Footer: React.FC<FooterProps> = ({ data }) => {
         </div>
 
         <div className="
-          mt-16 pt-8 border-t-4 border-neo-white
+          mt-16 pt-8 border-t-4 border-retro-white
           flex flex-col md:flex-row justify-between items-center
           text-sm font-bold uppercase tracking-wide
         ">

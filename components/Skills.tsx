@@ -6,6 +6,7 @@ import {
   CloudCheckIcon, TableIcon, FireIcon, PaperPlaneTiltIcon, RocketIcon, 
   SwatchesIcon 
 } from '@phosphor-icons/react';
+import HeroIllustration from './illustrations/HeroIllustration';
 
 interface SkillsProps {
   data: PortfolioData['skills'];
@@ -26,13 +27,13 @@ const Skills: React.FC<SkillsProps> = ({ data }) => {
 
   const getCategoryColor = (title: string) => {
     switch (title.toLowerCase()) {
-      case 'frontend': return 'bg-neo-accent';
-      case 'mobile': return 'bg-neo-accent';
-      case 'backend': return 'bg-neo-secondary';
-      case 'databases': return 'bg-neo-secondary';
-      case 'tools': return 'bg-neo-muted';
-      case 'languages': return 'bg-neo-white';
-      default: return 'bg-neo-white';
+      case 'frontend': return 'bg-retro-accent';
+      case 'mobile': return 'bg-retro-accent';
+      case 'backend': return 'bg-retro-secondary';
+      case 'databases': return 'bg-retro-secondary';
+      case 'tools': return 'bg-retro-tertiary';
+      case 'languages': return 'bg-retro-tertiary';
+      default: return 'bg-retro-white';
     }
   };
 
@@ -77,21 +78,25 @@ const Skills: React.FC<SkillsProps> = ({ data }) => {
     if (s.includes('css')) return <SwatchesIcon className="text-lg" weight="bold" />;
 
     // Default fallback
-    return <div className="w-2 h-2 rounded-none bg-neo-ink" />;
+    return <div className="w-2 h-2 rounded-none bg-retro-ink" />;
   };
 
   return (
-    <section id="skills" className="py-16 lg:py-24 bg-neo-secondary relative">
+    <section id="skills" className="pt-4 pb-2 lg:pt-4 lg:pb-2 bg-retro-secondary relative">
       <div className="absolute inset-0 bg-grid opacity-50"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="text-center mb-12">
-          <h2 className="neo-section-title text-neo-ink mb-4">
+        <div className="flex items-center justify-between mb-0">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter text-retro-ink">
             SKILLS
           </h2>
-          <p className="text-base md:text-xl font-bold max-w-2xl mx-auto text-neo-ink/80">
-            A TOOLKIT OF MODERN TECHNOLOGIES FOR BUILDING SCALABLE SOLUTIONS
-          </p>
+          <HeroIllustration 
+            className="
+              w-24 sm:w-28 md:w-36 lg:w-56 xl:w-64
+              rotate-2 sm:rotate-3 md:rotate-4 lg:rotate-4 xl:rotate-5
+              flex-shrink-0
+            "
+          />
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
@@ -99,20 +104,20 @@ const Skills: React.FC<SkillsProps> = ({ data }) => {
             <div 
               key={idx} 
               className={`
-                neo-card bg-neo-white
+                retro-card bg-retro-white
                 ${idx % 2 === 0 ? 'md:rotate-1' : 'md:-rotate-1'}
                 hover:rotate-0 transition-all duration-200
               `}
             >
               <div className={`
                 flex items-center gap-3 mb-4 p-3 
-                border-b-4 border-neo-ink
+                border-b-4 border-retro-ink
                 ${getCategoryColor(category.title)}
               `}>
-                <div className="p-2 border-4 border-neo-ink shadow-neo-sm bg-neo-white">
+                <div className="p-2 border-4 border-retro-ink shadow-retro-sm bg-retro-white">
                   {getCategoryIcon(category.title)}
                 </div>
-                <h3 className="text-lg font-black uppercase tracking-tight text-neo-ink">
+                <h3 className="text-lg font-black uppercase tracking-tight text-retro-ink">
                   {category.title}
                 </h3>
               </div>
@@ -121,10 +126,10 @@ const Skills: React.FC<SkillsProps> = ({ data }) => {
                   <span
                     key={sIdx}
                     className="
-                      neo-skill-badge
+                      retro-skill-badge
                       flex items-center gap-2
-                      hover:bg-neo-muted
-                      transition-colors duration-100
+                      hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px]
+                      transition-all duration-100
                       text-xs sm:text-sm
                     "
                   >

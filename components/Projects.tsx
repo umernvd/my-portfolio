@@ -8,16 +8,16 @@ interface ProjectsProps {
 
 const Projects: React.FC<ProjectsProps> = ({ data }) => {
   return (
-    <section id="projects" className="py-20 lg:py-32 bg-neo-bg relative">
+    <section id="projects" className="py-20 lg:py-32 bg-retro-bg relative">
       <div className="absolute inset-0 bg-halftone opacity-30"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16">
           <div>
-            <h2 className="neo-section-title text-neo-ink mb-4">
+            <h2 className="retro-section-title text-retro-ink mb-4">
               FEATURED PROJECTS
             </h2>
-            <p className="text-lg md:text-xl font-bold max-w-xl text-neo-ink/80">
+            <p className="text-lg md:text-xl font-bold max-w-xl text-retro-ink/80">
               HIGHLIGHTS OF RECENT WORK: MOBILE APPS, FULL-STACK PLATFORMS, AND ML MODELS
             </p>
           </div>
@@ -26,10 +26,9 @@ const Projects: React.FC<ProjectsProps> = ({ data }) => {
             target="_blank"
             rel="noopener noreferrer"
             className="
-              neo-btn neo-btn-outline mt-6 md:mt-0
+              retro-btn retro-btn-outline mt-6 md:mt-0
               inline-flex items-center gap-2
-              hover:bg-neo-muted
-              active:translate-x-[2px] active:translate-y-[2px] active:shadow-none
+              hover:bg-retro-bg hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px]
             "
           >
             VIEW ALL <GithubLogo className="w-4 h-4" weight="bold" />
@@ -41,16 +40,16 @@ const Projects: React.FC<ProjectsProps> = ({ data }) => {
             <div 
               key={idx} 
               className={`
-                neo-card bg-neo-white
+                retro-card bg-retro-white
                 flex flex-col h-full
                 ${idx % 2 === 0 ? 'md:rotate-1' : 'md:-rotate-1'}
-                hover:rotate-0 hover:-translate-y-2 hover:shadow-neo-xl
+                hover:rotate-0 hover:-translate-y-2 hover:shadow-retro-xl
                 transition-all duration-200
               `}
             >
               <div className="p-6 lg:p-8 flex-1">
                 <div className="flex justify-between items-start mb-4">
-                  <div className="p-4 border-4 border-neo-ink shadow-neo-sm bg-neo-secondary">
+                  <div className="p-4 border-4 border-retro-ink shadow-retro-sm bg-retro-secondary">
                     <FolderOpen className="w-8 h-8" weight="bold" />
                   </div>
                   <a
@@ -58,10 +57,9 @@ const Projects: React.FC<ProjectsProps> = ({ data }) => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="
-                      p-3 border-4 border-neo-ink shadow-neo-sm bg-neo-white
-                      hover:bg-neo-accent hover:text-neo-white
+                      p-3 border-4 border-retro-ink shadow-retro-sm bg-retro-white
+                      hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px]
                       transition-all duration-100
-                      active:translate-x-[2px] active:translate-y-[2px] active:shadow-none
                     "
                     aria-label={`View ${project.title} on GitHub`}
                   >
@@ -69,12 +67,12 @@ const Projects: React.FC<ProjectsProps> = ({ data }) => {
                   </a>
                 </div>
 
-                <h3 className="text-xl lg:text-2xl font-black uppercase tracking-tight mb-4 text-neo-ink">
+                <h3 className="text-xl lg:text-2xl font-black uppercase tracking-tight mb-4 text-retro-ink">
                   <a 
                     href={project.link || "https://github.com/umernvd"} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="hover:text-neo-accent transition-colors"
+                    className="hover:text-retro-tertiary transition-colors"
                   >
                     {project.title}
                   </a>
@@ -84,7 +82,7 @@ const Projects: React.FC<ProjectsProps> = ({ data }) => {
                   {project.tech.map((tech, tIdx) => (
                     <span 
                       key={tIdx} 
-                      className="neo-badge font-mono text-xs"
+                      className="retro-badge font-mono text-xs"
                     >
                       {tech}
                     </span>
@@ -95,25 +93,24 @@ const Projects: React.FC<ProjectsProps> = ({ data }) => {
                   {project.description.map((desc, dIdx) => (
                     <li 
                       key={dIdx} 
-                      className="font-medium leading-relaxed flex items-start text-neo-ink/80"
+                      className="font-medium leading-relaxed flex items-start text-retro-ink/80"
                     >
-                      <span className="mr-3 mt-2 w-2 h-2 bg-neo-accent flex-shrink-0 border-2 border-neo-ink"></span>
+                      <span className="mr-3 mt-2 w-2 h-2 bg-retro-accent flex-shrink-0 border-2 border-retro-ink"></span>
                       {desc}
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className="p-6 lg:p-8 border-t-4 border-neo-ink">
+              <div className="p-6 lg:p-8 border-t-4 border-retro-ink">
                 <a
                   href={project.link || "https://github.com/umernvd"}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="
-                    neo-btn neo-btn-outline w-full
+                    retro-btn retro-btn-outline w-full
                     inline-flex items-center justify-center gap-2
-                    hover:bg-neo-muted
-                    active:translate-x-[2px] active:translate-y-[2px] active:shadow-none
+                    hover:bg-retro-bg hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px]
                   "
                 >
                   <ArrowSquareOut className="w-4 h-4" weight="bold" />
