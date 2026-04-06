@@ -127,14 +127,6 @@
   font-weight: 700;
 }
 
-@utility retro-link {
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  border-bottom-width: 4px;
-  border-color: var(--color-retro-accent);
-}
-
 @layer base {
   html {
     scroll-padding-top: 100px;
@@ -165,11 +157,6 @@
   background-image:
     linear-gradient(to right, rgb(0 0 0 / 0.1) 1px, transparent 1px),
     linear-gradient(to bottom, rgb(0 0 0 / 0.1) 1px, transparent 1px);
-}
-
-.text-stroke {
-  -webkit-text-stroke: 2px var(--color-retro-ink);
-  color: transparent;
 }
 
 .shadow-retro-dark-sm {
