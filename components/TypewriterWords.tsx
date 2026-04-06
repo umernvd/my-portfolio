@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 interface TypewriterWordsProps {
   words: string[];
@@ -8,94 +8,55 @@ interface TypewriterWordsProps {
   emptyPause?: number;
 }
 
-type Phase = 'typing' | 'pausing' | 'deleting' | 'empty';
-
-const TypewriterWords: React.FC<TypewriterWordsProps> = React.memo(({
+function TypewriterWords({
   words,
   typingSpeed = 150,
   deletingSpeed = 75,
   pauseAfterTyping = 2000,
   emptyPause = 500,
-}) => {
-  const getRandomChar = () => {
-    if (words.length === 0) return '';
-    const randomIndex = Math.floor(Math.random() * words.length);
-    return words[randomIndex]?.[0] || '';
-  };
-
-  const [displayText, setDisplayText] = useState(getRandomChar());
-  const indexRef = useRef<{ word: number; char: number; phase: Phase }>({ word: 0, char: 1, phase: 'typing' });
-  const shuffledRef = useRef([...words].sort(() => Math.random() - 0.5));
+}: TypewriterWordsProps) {
+  const [displayText, setDisplayText] = useState('');
+  const [wordIndex, setWordIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    const randomWordIndex = Math.floor(Math.random() * words.length);
-    shuffledRef.current = [...words].sort(() => Math.random() - 0.5);
-    indexRef.current = { word: randomWordIndex, char: 1, phase: 'typing' };
-    setDisplayText(shuffledRef.current[randomWordIndex]?.[0] || '');
-
-    const animate = () => {
-      const current = indexRef.current;
-      const currentWord = shuffledRef.current[current.word];
-
-      if (!currentWord) return;
-
-      switch (current.phase) {
-        case 'typing':
-          current.char++;
-          setDisplayText(currentWord.slice(0, current.char));
-
-          if (current.char >= currentWord.length) {
-            current.phase = 'pausing';
-            timeoutRef.current = setTimeout(animate, pauseAfterTyping);
-          } else {
-            timeoutRef.current = setTimeout(animate, typingSpeed);
-          }
-          break;
-
-        case 'pausing':
-          current.phase = 'deleting';
-          timeoutRef.current = setTimeout(animate, 100);
-          break;
-
-        case 'deleting':
-          current.char--;
-          setDisplayText(currentWord.slice(0, Math.max(0, current.char)));
-
-          if (current.char <= 0) {
-            current.phase = 'empty';
-            timeoutRef.current = setTimeout(animate, emptyPause);
-          } else {
-            timeoutRef.current = setTimeout(animate, deletingSpeed);
-          }
-          break;
-
-        case 'empty': {
-          let nextWord = current.word + 1;
-
-          if (nextWord >= shuffledRef.current.length) {
-            shuffledRef.current.sort(() => Math.random() - 0.5);
-            nextWord = 0;
-          }
-
-          current.word = nextWord;
-          current.char = 1;
-          current.phase = 'typing';
-          setDisplayText(shuffledRef.current[nextWord]?.[0] || '');
-          timeoutRef.current = setTimeout(animate, 100);
-          break;
+    const currentWord = words[wordIndex] || '';
+    
+    const type = () => {
+      if (isDeleting) {
+        setDisplayText(currentWord.slice(0, charIndex - 1));
+        setCharIndex(charIndex - 1);
+        
+        if (charIndex <= 1) {
+          setIsDeleting(false);
+          setWordIndex((wordIndex + 1) % words.length);
+          timeoutRef.current = setTimeout(type, emptyPause);
+        } else {
+          timeoutRef.current = setTimeout(type, deletingSpeed);
+        }
+      } else {
+        setDisplayText(currentWord.slice(0, charIndex + 1));
+        setCharIndex(charIndex + 1);
+        
+        if (charIndex >= currentWord.length) {
+          setIsDeleting(true);
+          timeoutRef.current = setTimeout(type, pauseAfterTyping);
+        } else {
+          timeoutRef.current = setTimeout(type, typingSpeed);
         }
       }
     };
 
-    timeoutRef.current = setTimeout(animate, 0);
+    timeoutRef.current = setTimeout(type, typingSpeed);
 
     return () => {
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);
       }
     };
-  }, [words, typingSpeed, deletingSpeed, pauseAfterTyping, emptyPause]);
+  }, [words, wordIndex, charIndex, isDeleting, typingSpeed, deletingSpeed, pauseAfterTyping, emptyPause]);
 
   return (
     <div className="inline-flex items-center">
@@ -103,8 +64,6 @@ const TypewriterWords: React.FC<TypewriterWordsProps> = React.memo(({
       <span className="inline-block w-[2px] h-[1em] bg-current ml-0.5 animate-blink" />
     </div>
   );
-});
-
-TypewriterWords.displayName = 'TypewriterWords';
+}
 
 export default TypewriterWords;

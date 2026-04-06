@@ -5,7 +5,7 @@ interface ErrorFallbackProps {
   resetError?: () => void;
 }
 
-const ErrorFallback: React.FC<ErrorFallbackProps> = ({ error, resetError }) => {
+function ErrorFallback({ error, resetError }: ErrorFallbackProps) {
   const isDevelopment = import.meta.env.DEV;
 
   const handleReload = () => {
@@ -64,6 +64,6 @@ const ErrorFallback: React.FC<ErrorFallbackProps> = ({ error, resetError }) => {
       </div>
     </div>
   );
-};
+}
 
 export default ErrorFallback;
