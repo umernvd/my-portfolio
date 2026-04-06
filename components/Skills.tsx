@@ -40,7 +40,6 @@ const Skills: React.FC<SkillsProps> = ({ data }) => {
   const getSkillIcon = (skill: string) => {
     const s = skill.toLowerCase();
 
-    // Devicon icons (tech logos)
     if (s.includes('next.js')) return <i className="devicon-nextjs-plain text-lg" />;
     if (s.includes('react')) return <i className="devicon-react-original colored text-lg" />;
     if (s.includes('html')) return <i className="devicon-html5-plain colored text-lg" />;
@@ -59,7 +58,6 @@ const Skills: React.FC<SkillsProps> = ({ data }) => {
     if (s.includes('typescript')) return <i className="devicon-typescript-plain colored text-lg" />;
     if (s.includes('dart')) return <i className="devicon-dart-plain colored text-lg" />;
 
-    // Phosphor icons for generic concepts (fallbacks)
     if (s.includes('api') || s.includes('oauth2') || s.includes('jwt')) 
       return <Globe className="text-lg" weight="bold" />;
     
@@ -77,7 +75,6 @@ const Skills: React.FC<SkillsProps> = ({ data }) => {
     if (s.includes('vercel')) return <RocketIcon className="text-lg" weight="bold" />;
     if (s.includes('css')) return <SwatchesIcon className="text-lg" weight="bold" />;
 
-    // Default fallback
     return <div className="w-2 h-2 rounded-none bg-retro-ink" />;
   };
 
