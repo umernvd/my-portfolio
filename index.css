@@ -140,6 +140,10 @@
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
     min-width: -webkit-fit-content;
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
   }
 
   .retro-input::placeholder {
@@ -202,6 +206,27 @@ html.lenis, html.lenis body {
 
 .animate-blink {
   animation: blink 1s infinite;
+}
+
+@utility touch-target {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+@utility mobile-padding {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@utility mobile-section-padding {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+@media (max-width: 639px) {
+  html {
+    font-size: 14px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
