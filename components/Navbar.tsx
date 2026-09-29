@@ -1,10 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { List, X } from '@phosphor-icons/react';
 import TypewriterWords from './TypewriterWords';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
+  const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,6 +15,38 @@ function Navbar() {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleOutsideClick = (e: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleOutsideClick);
+    }
+    return () => document.removeEventListener('mousedown', handleOutsideClick);
+  }, [isOpen]);
+
+  useEffect(() => {
+    const sections = navLinks.map(link => document.getElementById(link.href.slice(1)));
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setActiveSection(`#${entry.target.id}`);
+          }
+        });
+      },
+      { rootMargin: '-40% 0px -55% 0px' }
+    );
+
+    sections.forEach(section => {
+      if (section) observer.observe(section);
+    });
+    return () => observer.disconnect();
   }, []);
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -47,8 +81,8 @@ function Navbar() {
               href="#"
               onClick={(e) => handleNavClick(e, '#')}
               className="
-                font-black text-lg sm:text-xl md:text-2xl tracking-tighter uppercase
-                bg-retro-secondary border-4 border-retro-ink shadow-retro-sm px-3 py-1
+                font-black text-sm sm:text-lg md:text-xl tracking-tighter uppercase
+                bg-retro-secondary border-4 border-retro-ink shadow-retro-sm px-2 py-1 sm:px-3
                 hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px]
                 transition-all duration-100
               "
@@ -89,6 +123,8 @@ function Navbar() {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
+              aria-expanded={isOpen}
+              aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
               className="
                 p-3 border-4 border-retro-ink shadow-retro-sm bg-retro-white
                 hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px]
@@ -106,19 +142,21 @@ function Navbar() {
       </div>
 
       {isOpen && (
-        <div className="md:hidden bg-retro-bg border-t-4 border-retro-ink shadow-retro-lg absolute top-full left-0 w-full">
+        <div ref={menuRef} className="md:hidden bg-retro-bg border-t-4 border-retro-ink shadow-retro-lg absolute top-full left-0 w-full">
           <div className="px-4 pt-2 pb-6 space-y-2">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="
-                  block px-4 py-3 font-bold uppercase tracking-wide text-base
+                aria-current={activeSection === link.href ? 'true' : undefined}
+                className={`
+                  block px-4 py-3 font-bold uppercase tracking-wide text-sm
                   border-4 border-retro-ink shadow-retro-sm bg-retro-white
                   hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px]
                   transition-all duration-100
-                "
+                  ${activeSection === link.href ? 'bg-retro-accent' : ''}
+                `}
               >
                 {link.name}
               </a>
