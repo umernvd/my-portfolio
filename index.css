@@ -147,6 +147,26 @@
   }
 }
 
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
 .bg-halftone {
   background-image: radial-gradient(var(--color-retro-ink) 1.5px, transparent 1.5px);
   background-size: 20px 20px;

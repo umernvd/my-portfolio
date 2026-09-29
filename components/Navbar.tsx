@@ -16,20 +16,11 @@ function Navbar() {
   }, []);
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    const targetId = href.replace('#', '');
-
-    if (!targetId) {
-      window.scrollTo({ top: 0 });
-      setIsOpen(false);
-      return;
-    }
-
-    const element = document.getElementById(targetId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'instant' });
-    }
     setIsOpen(false);
+    if (href === '#') {
+      e.preventDefault();
+      window.scrollTo({ top: 0 });
+    }
   };
 
   const navLinks = [
