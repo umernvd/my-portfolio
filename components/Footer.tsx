@@ -46,7 +46,7 @@ function Footer({ data }: FooterProps) {
                 href={`mailto:${data.email}`} 
                 className="
                   flex items-center gap-3 
-                  p-4 border-4 border-retro-white shadow-retro-dark-sm bg-retro-dark-card
+                  p-3 sm:p-4 border-4 border-retro-white shadow-retro-dark-sm bg-retro-dark-card
                   hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px]
                   transition-all duration-100 font-bold
                 "
@@ -62,7 +62,7 @@ function Footer({ data }: FooterProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="
-                  w-14 h-14 flex items-center justify-center
+                  w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center
                   border-4 border-retro-white shadow-retro-dark-sm bg-retro-dark-card
                   hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px]
                   transition-all duration-100
@@ -76,7 +76,7 @@ function Footer({ data }: FooterProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="
-                  w-14 h-14 flex items-center justify-center
+                  w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center
                   border-4 border-retro-white shadow-retro-dark-sm bg-retro-dark-card
                   hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px]
                   transition-all duration-100
@@ -93,7 +93,7 @@ function Footer({ data }: FooterProps) {
             bg-retro-dark-card p-6 md:p-8
           ">
             {isSubmitted ? (
-              <div className="h-full flex flex-col items-center justify-center text-center py-8">
+              <div className="h-full flex flex-col items-center justify-center text-center py-6 sm:py-8">
                 <div className="
                   w-20 h-20 flex items-center justify-center
                   border-4 border-retro-white shadow-retro-dark-sm
@@ -118,7 +118,7 @@ function Footer({ data }: FooterProps) {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-5 w-full">
                 <div>
                   <label htmlFor="name" className="block font-bold text-sm uppercase tracking-wide mb-2 text-retro-white/80">
                     NAME
@@ -130,7 +130,7 @@ function Footer({ data }: FooterProps) {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="retro-input bg-retro-dark-card border-retro-white text-retro-white"
+                    className="retro-input bg-retro-dark-card border-retro-white text-retro-white text-base sm:text-lg"
                   />
                 </div>
                 <div>
@@ -144,7 +144,7 @@ function Footer({ data }: FooterProps) {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="retro-input bg-retro-dark-card border-retro-white text-retro-white"
+                    className="retro-input bg-retro-dark-card border-retro-white text-retro-white text-base sm:text-lg"
                   />
                 </div>
                 <div>
@@ -158,7 +158,7 @@ function Footer({ data }: FooterProps) {
                     rows={4}
                     value={formData.message}
                     onChange={handleChange}
-                    className="retro-input bg-retro-dark-card border-retro-white text-retro-white resize-none"
+                    className="retro-input bg-retro-dark-card border-retro-white text-retro-white text-base sm:text-lg resize-none"
                   />
                 </div>
                 <button
