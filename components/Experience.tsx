@@ -13,7 +13,8 @@ function Experience({ data }: ExperienceProps) {
         </h2>
 
         <div className="max-w-3xl mx-auto relative">
-          
+          <div aria-hidden="true" className="md:hidden absolute left-0 top-0 bottom-0 w-1 bg-retro-ink"></div>
+
           {data.map((exp, idx) => (
             <div key={idx} className="relative mb-12 last:mb-0">
               
@@ -24,9 +25,9 @@ function Experience({ data }: ExperienceProps) {
                 md:rotate-1 hover:rotate-0 hover:-translate-y-1 hover:shadow-retro-lg
                 transition-all duration-200
               `}>
-                <div className="p-6 lg:p-8 border-b-4 border-retro-ink bg-retro-accent">
+                <div className="p-4 sm:p-6 lg:p-8 border-b-4 border-retro-ink bg-retro-accent">
                   <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
-                    <h3 className="text-xl font-black uppercase tracking-tight text-retro-ink">
+                    <h3 className="text-lg sm:text-xl font-black uppercase tracking-tight text-retro-ink">
                       {exp.role}
                     </h3>
                     <span className="retro-badge retro-badge-accent whitespace-nowrap">
@@ -35,7 +36,7 @@ function Experience({ data }: ExperienceProps) {
                   </div>
                 </div>
 
-                <div className="p-6 lg:p-8">
+                <div className="p-4 sm:p-6 lg:p-8">
                   <p className="text-lg font-bold mb-4 text-retro-ink/80">
                     {exp.company}
                   </p>
