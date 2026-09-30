@@ -26,7 +26,7 @@ function Education({ data }: EducationProps) {
                 transition-all duration-200
               `}
             >
-              <div className="flex flex-col md:flex-row gap-6 p-6 lg:p-8">
+              <div className="flex flex-col md:flex-row gap-6 p-4 sm:p-6 lg:p-8">
                 <div className="flex-shrink-0">
                   <div className="p-4 border-4 border-retro-ink shadow-retro-sm bg-retro-secondary">
                     <GraduationCap className="w-8 h-8 text-retro-white" weight="bold" />
@@ -35,10 +35,10 @@ function Education({ data }: EducationProps) {
 
                 <div className="flex-1">
                   <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-2">
-                    <h3 className="text-xl lg:text-2xl font-black uppercase tracking-tight text-retro-ink">
+                    <h3 className="text-lg sm:text-xl lg:text-2xl font-black uppercase tracking-tight text-retro-ink">
                       {edu.degree}
                     </h3>
-                    <span className="retro-badge retro-badge-secondary whitespace-nowrap">
+                    <span className="retro-badge retro-badge-secondary whitespace-normal sm:whitespace-nowrap">
                       {edu.grade}
                     </span>
                   </div>
