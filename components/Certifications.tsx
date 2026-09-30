@@ -31,7 +31,7 @@ function Certifications({ data }: CertificationsProps) {
                 transition-all duration-200
               `}
             >
-              <div className="p-6 flex items-start gap-4">
+              <div className="p-4 sm:p-6 flex items-start gap-4">
                 <div className={`
                   p-3 border-4 border-retro-ink shadow-retro-sm
                   ${idx % 3 === 0 ? 'bg-retro-accent' : idx % 3 === 1 ? 'bg-retro-secondary' : 'bg-retro-tertiary'}
@@ -40,7 +40,7 @@ function Certifications({ data }: CertificationsProps) {
                   <Medal className="w-6 h-6" weight="bold" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h3 className="font-black text-base lg:text-lg uppercase tracking-tight text-retro-ink mb-2 leading-tight">
+                  <h3 className="font-black text-sm sm:text-base lg:text-lg uppercase tracking-tight text-retro-ink mb-2 leading-tight">
                     {cert.name}
                   </h3>
                   <div className="flex items-center gap-2">
