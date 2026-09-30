@@ -7,14 +7,14 @@ interface HeroProps {
 
 function Hero({ data }: HeroProps) {
   return (
-    <section id="about" className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden min-h-screen">
+    <section id="about" className="relative pt-24 pb-16 lg:pt-48 lg:pb-32 overflow-hidden min-h-[80vh] lg:min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12 lg:gap-16">
           <div className="flex-1 max-w-3xl order-2 lg:order-1">
             <h1 className="
-              text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 
+              text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 
               font-black uppercase tracking-tighter 
-              mb-6
+              mb-4 lg:mb-6
             ">
               HI, I'M{' '}
               <span className="bg-retro-accent px-4 border-4 border-retro-ink shadow-retro-md inline-block rotate-1">
@@ -23,16 +23,16 @@ function Hero({ data }: HeroProps) {
             </h1>
             
             <h2 className="
-              text-xl md:text-2xl lg:text-3xl 
-              font-bold mb-8
+              text-base md:text-2xl lg:text-3xl 
+              font-bold mb-6 lg:mb-8
               text-retro-ink/80
             ">
               {data.title.toUpperCase()} BUILDING DIGITAL EXPERIENCES
             </h2>
 
-            <div className="lg:hidden flex justify-center mb-8">
+            <div className="lg:hidden flex justify-center mb-6">
               <div className="
-                w-64 h-64 rounded-none 
+                w-48 h-48 sm:w-56 sm:h-56 rounded-none 
                 border-4 border-retro-ink shadow-retro-lg
                 bg-retro-white overflow-hidden
                 rotate-1
@@ -43,13 +43,14 @@ function Hero({ data }: HeroProps) {
                   src="/profile.png"
                   alt="Umer Naveed"
                   className="w-full h-full object-cover"
+                  loading="eager"
                 />
               </div>
             </div>
 
             <p className="
-              text-lg md:text-xl 
-              leading-relaxed mb-10 
+              text-base md:text-xl 
+              leading-relaxed mb-8 lg:mb-10 
               max-w-2xl
               font-medium
             ">
@@ -58,7 +59,7 @@ function Hero({ data }: HeroProps) {
               applications using modern technologies.
             </p>
 
-            <div className="flex flex-wrap gap-4 mb-12">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3 mb-8 lg:mb-12">
               <a
                 href="#contact"
                 className="
