@@ -13,10 +13,10 @@ function Projects({ data }: ProjectsProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16">
           <div>
-            <h2 className="retro-section-title text-retro-ink mb-4">
+            <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tighter text-retro-ink mb-4">
               FEATURED PROJECTS
             </h2>
-            <p className="text-lg md:text-xl font-bold max-w-xl text-retro-ink/80">
+            <p className="text-base md:text-xl font-bold max-w-xl text-retro-ink/80">
               HIGHLIGHTS OF RECENT WORK: MOBILE APPS, FULL-STACK PLATFORMS, AND ML MODELS
             </p>
           </div>
@@ -26,6 +26,7 @@ function Projects({ data }: ProjectsProps) {
             rel="noopener noreferrer"
             className="
               retro-btn retro-btn-outline mt-6 md:mt-0
+              w-full justify-center md:w-auto
               inline-flex items-center gap-2
               hover:bg-retro-bg hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px]
             "
@@ -46,7 +47,7 @@ function Projects({ data }: ProjectsProps) {
                 transition-all duration-200
               `}
             >
-              <div className="p-6 lg:p-8 flex-1">
+              <div className="p-4 sm:p-6 lg:p-8 flex-1">
                 <div className="flex justify-between items-start mb-4">
                   <div className="p-4 border-4 border-retro-ink shadow-retro-sm bg-retro-secondary">
                     <FolderOpen className="w-8 h-8" weight="bold" />
@@ -94,14 +95,14 @@ function Projects({ data }: ProjectsProps) {
                       key={dIdx} 
                       className="font-medium leading-relaxed flex items-start text-retro-ink/80"
                     >
-                      <span className="mr-3 mt-2 w-2 h-2 bg-retro-accent flex-shrink-0 border-2 border-retro-ink"></span>
+                      <span className="mr-2 sm:mr-3 mt-2 w-2 h-2 bg-retro-accent flex-shrink-0 border-2 border-retro-ink"></span>
                       {desc}
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className="p-6 lg:p-8 border-t-4 border-retro-ink">
+              <div className="p-4 sm:p-6 lg:p-8 border-t-4 border-retro-ink">
                 <a
                   href={project.link || "https://github.com/umernvd"}
                   target="_blank"
