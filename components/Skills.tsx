@@ -5,8 +5,6 @@ import {
   CloudCheckIcon, TableIcon, FireIcon, PaperPlaneTiltIcon, RocketIcon, 
   SwatchesIcon 
 } from '@phosphor-icons/react';
-import HeroIllustration from './illustrations/HeroIllustration';
-
 interface SkillsProps {
   data: PortfolioData['skills'];
 }
@@ -78,22 +76,13 @@ function Skills({ data }: SkillsProps) {
   };
 
   return (
-    <section id="skills" className="pt-4 pb-2 lg:pt-4 lg:pb-2 bg-retro-secondary relative">
+    <section id="skills" className="pt-8 pb-4 bg-retro-secondary relative">
       <div className="absolute inset-0 bg-grid opacity-50"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="flex items-center justify-between mb-0">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter text-retro-ink">
-            SKILLS
-          </h2>
-          <HeroIllustration 
-            className="
-              w-24 sm:w-28 md:w-36 lg:w-56 xl:w-64
-              rotate-2 sm:rotate-3 md:rotate-4 lg:rotate-4 xl:rotate-5
-              flex-shrink-0
-            "
-          />
-        </div>
+        <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter text-retro-ink">
+          SKILLS
+        </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
           {data.map((category, idx) => (
@@ -124,6 +113,7 @@ function Skills({ data }: SkillsProps) {
                     className="
                       retro-skill-badge
                       flex items-center gap-2
+                      px-2 py-1.5 sm:px-3 sm:py-2
                       hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px]
                       transition-all duration-100
                       text-xs sm:text-sm
