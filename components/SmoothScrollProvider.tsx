@@ -11,9 +11,10 @@ export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
       autoRaf: true,
       autoResize: true,
       anchors: true,
+      lerp: 0.08,
+      wheelMultiplier: 0.9,
       syncTouch: true,
-      syncTouchLerp: 0.1,
-      lerp: 0.1,
+      syncTouchLerp: 0.075,
     });
 
     return () => {

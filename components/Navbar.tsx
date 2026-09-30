@@ -49,12 +49,8 @@ function Navbar() {
     return () => observer.disconnect();
   }, []);
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleNavClick = () => {
     setIsOpen(false);
-    if (href === '#') {
-      e.preventDefault();
-      window.scrollTo({ top: 0 });
-    }
   };
 
   const navLinks = [
@@ -79,7 +75,7 @@ function Navbar() {
           <div className="flex-shrink-0 flex items-center">
             <a
               href="#"
-              onClick={(e) => handleNavClick(e, '#')}
+              onClick={handleNavClick}
               className="
                 font-black text-sm sm:text-lg md:text-xl tracking-tighter uppercase
                 bg-retro-secondary border-4 border-retro-ink shadow-retro-sm px-2 py-1 sm:px-3
@@ -107,7 +103,7 @@ function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
+                onClick={handleNavClick}
                 className="
                   px-4 py-2 font-bold uppercase tracking-wide text-sm
                   border-4 border-retro-ink shadow-retro-sm
@@ -148,7 +144,7 @@ function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
+                onClick={handleNavClick}
                 aria-current={activeSection === link.href ? 'true' : undefined}
                 className={`
                   block px-4 py-3 font-bold uppercase tracking-wide text-sm
